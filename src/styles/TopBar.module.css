@@ -1,0 +1,36 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  align-self: flex-start;
+  background: var(--topbar-background);
+  color: var(--topbar-text-color);
+  height: var(--topbar-height);
+  display: flex;
+}
+
+.homelink {
+  color: white;
+  text-decoration: none;
+  font-size: 32px;
+  margin: auto 8px;
+  display: inline-block;
+}
+
+.homelink:hover {
+  text-decoration: none;
+}
+
+.externalLinks {
+  margin-left: auto;
+}
+
+.github {
+  background: center / contain no-repeat
+    url("/github-mark/github-mark-white.svg");
+  display: block;
+  --length: 36px;
+  width: var(--length);
+  height: var(--length);
+  margin: calc((var(--topbar-height) - var(--length)) / 2) 8px;
+}

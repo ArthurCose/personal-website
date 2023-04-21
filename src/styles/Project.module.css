@@ -1,0 +1,40 @@
+.container {
+  margin-bottom: 12px;
+  border: 1px solid var(--lightgrey);
+  background: var(--lightgrey);
+}
+
+.name {
+  padding-left: 6px;
+  padding-top: 2px;
+  font-weight: bold;
+  color: var(--header-color);
+}
+
+.detailContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: black;
+}
+
+.descriptionContainer {
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 4px 8px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: auto;
+}

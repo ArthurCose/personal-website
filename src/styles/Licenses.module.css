@@ -1,0 +1,30 @@
+.list_item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 0 8px;
+  background: var(--background);
+}
+
+.list_item:nth-child(odd) {
+  background: var(--lightgrey);
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+}
+
+.links > * {
+  margin-left: 16px;
+}
+
+.project_name {
+  flex: 1;
+  color: var(--header-color);
+}
+
+.license_text {
+  overflow-x: auto;
+}

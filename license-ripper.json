@@ -1,0 +1,56 @@
+{
+  "includeHomepage": true,
+  "includeRepository": true,
+  "includeFunding": true,
+  "exclude": [
+    "@next/swc-linux-x64-gnu",
+    "@next/swc-linux-x64-musl",
+    "client-only"
+  ],
+  "overrides": {
+    "@swc/helpers": {
+      "licenseExpression": "Apache-2.0"
+    },
+    "data-uri-to-buffer": {
+      "licenses": [
+        {
+          "file": "licenses/data-uri-to-buffer.txt"
+        }
+      ]
+    },
+    "natural-compare": {
+      "licenses": [
+        {
+          "file": "licenses/natural-compare.txt"
+        }
+      ]
+    },
+    "language-tags": {
+      "licenses": [
+        {
+          "file": "licenses/language-tags.txt"
+        }
+      ]
+    },
+    "language-subtag-registry": {
+      "licenses": [
+        {
+          "file": "licenses/language-subtag-registry.txt"
+        }
+      ]
+    }
+  },
+  "append": [
+    {
+      "name": "rubik-marker-hatch",
+      "homepage": "https://fonts.google.com/specimen/Rubik+Marker+Hatch/about",
+      "repository": "https://github.com/NaN-xyz/Glyph-Filters",
+      "licenses": [
+        {
+          "expression": "OFL-1.1",
+          "file": "licenses/rubik-marker-hatch.txt"
+        }
+      ]
+    }
+  ]
+}

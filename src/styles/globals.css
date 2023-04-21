@@ -1,0 +1,129 @@
+:root {
+  --text-color: black;
+  --link-color: rgb(2, 127, 230);
+  --local-link-color: rgb(255, 100, 34);
+  --background: white;
+  --lightgrey: #ccc;
+  --topbar-text-color: white;
+  --topbar-background: var(--link-color);
+  --topbar-height: 50px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: lightgrey;
+    /* --link-color: rgb(54, 165, 255); */
+    --link-color: white;
+    --local-link-color: rgb(54, 165, 255);
+    /* --topbar-background: rgb(0, 123, 224); */
+    --topbar-background: #222;
+    --header-color: white;
+    --background: black;
+    --lightgrey: #222;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 8px;
+}
+
+html,
+body {
+  max-width: 100vw;
+  font: 16px sans-serif;
+}
+
+body {
+  color: var(--text-color);
+  background: var(--background);
+}
+
+#app-container {
+  display: flex;
+}
+
+#sidebar {
+  background: var(--background);
+  padding: 8px;
+  width: 200px;
+  height: calc(100vh - var(--topbar-height));
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: var(--topbar-height);
+}
+
+#sidebar .local-link {
+  color: var(--local-link-color);
+}
+
+#main-content {
+  max-width: 800px;
+  padding: 16px 8px;
+  flex: 1;
+  overflow-x: auto;
+}
+
+#hamburger {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(
+    to bottom,
+    transparent 10%,
+    var(--topbar-text-color) 10%,
+    var(--topbar-text-color) 20%,
+    transparent 20%,
+    transparent 45%,
+    var(--topbar-text-color) 45%,
+    var(--topbar-text-color) 55%,
+    transparent 55%,
+    transparent 80%,
+    var(--topbar-text-color) 80%,
+    var(--topbar-text-color) 90%,
+    transparent 90%
+  );
+  margin: calc((var(--topbar-height) - 24px) / 2);
+  display: none;
+  border: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  #sidebar {
+    position: fixed;
+    border-right: 1px solid var(--lightgrey);
+    display: none;
+  }
+
+  #app-container {
+    display: block;
+  }
+
+  #hamburger {
+    display: block;
+  }
+}
