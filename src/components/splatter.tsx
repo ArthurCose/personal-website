@@ -65,46 +65,26 @@ function splat(
   color: string,
   range: number
 ) {
+  ctx.save();
+  ctx.translate(splatX, splatY);
   ctx.fillStyle = color;
 
   const HALF_MAX_BLOT_WIDTH = 4;
-
   const blotCount = Math.floor((range / MAX_RANGE) * MAX_RANGE_BLOT_COUNT);
 
   for (let i = 0; i < blotCount; i++) {
-    const angle = Math.random() * Math.PI * 2;
-    const vecX = Math.cos(angle);
-    const vecY = Math.sin(angle);
     const distance = Math.random() ** 2 * range;
 
-    const blotX = splatX + vecX * distance;
-    const blotY = splatY + vecY * distance;
-
     const normalizedDistance = distance / range;
-    const halfWidth = (1 - normalizedDistance) ** 3 * HALF_MAX_BLOT_WIDTH;
-    const halfHeight = lerp(halfWidth, halfWidth * 20, Math.random());
+    const halfWidth = (1 - normalizedDistance) ** 2 * HALF_MAX_BLOT_WIDTH;
+    const halfHeight = lerp(halfWidth, halfWidth * 10, Math.random());
 
-    const offsetX = vecY * halfWidth;
-    const offsetY = -vecX * halfWidth;
-    const controlX = vecX * halfHeight;
-    const controlY = vecY * halfHeight;
-
+    ctx.rotate(Math.random() * Math.PI * 2);
     ctx.beginPath();
-    ctx.moveTo(blotX + offsetX, blotY + offsetY);
-    ctx.quadraticCurveTo(
-      blotX + controlX,
-      blotY + controlY,
-      blotX - offsetX,
-      blotY - offsetY
-    );
-    ctx.quadraticCurveTo(
-      blotX - controlX,
-      blotY - controlY,
-      blotX + offsetX,
-      blotY + offsetY
-    );
+    ctx.ellipse(distance, 0, halfHeight, halfWidth, 0, 0, Math.PI * 2);
     ctx.fill();
   }
+  ctx.restore();
 }
 
 function lerp(start: number, end: number, progress: number): number {
