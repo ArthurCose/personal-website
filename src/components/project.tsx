@@ -16,7 +16,9 @@ type ProjectProps = {
 export default function Project(props: ProjectProps) {
   return (
     <div className={styles.container}>
-      <div className={styles.name}>{props.name}</div>
+      <div className={styles.header}>
+        <div className={styles.name}>{props.name}</div>
+      </div>
 
       <div className={styles.detailContainer}>
         <div className={styles.imageContainer}>

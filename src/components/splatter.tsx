@@ -22,14 +22,14 @@ export default function Splatter() {
     ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
 
     const colors = [
-      "red",
-      "green",
+      // "red",
+      // "green",
       "blue",
-      "purple",
-      "orange",
-      "black",
+      "magenta",
+      "yellow",
+      "white",
       "cyan",
-      "pink",
+      // "pink",
     ];
 
     for (let i = 0; i < 3; i++) {

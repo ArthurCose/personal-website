@@ -22,15 +22,45 @@
 }
 
 .externalLinks {
+  display: flex;
+  flex-direction: row;
   margin-left: auto;
+  align-items: center;
+}
+
+.externalLinks > * {
+  display: block;
+  --length: 36px;
+  width: var(--length);
+  height: var(--length);
+  margin-right: 8px;
+}
+
+.linkedIn {
+  background: center / contain no-repeat url("/linked-in-mark.png");
 }
 
 .github {
   background: center / contain no-repeat
     url("/github-mark/github-mark-white.svg");
-  display: block;
-  --length: 36px;
-  width: var(--length);
-  height: var(--length);
-  margin: calc((var(--topbar-height) - var(--length)) / 2) 8px;
+}
+
+.email {
+  background: center / contain no-repeat url("/email.svg");
+  filter: invert();
+  position: relative;
+}
+
+.copied {
+  position: absolute;
+  top: calc(50%);
+  left: 50%;
+  transform: translate(-50%, 0%);
+  pointer-events: none;
+  background: var(--background);
+  border: 1px solid var(--lightgrey);
+  padding: 0px 4px;
+  filter: invert();
+  white-space: nowrap;
+  display: none;
 }

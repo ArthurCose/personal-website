@@ -42,13 +42,12 @@
   },
   "append": [
     {
-      "name": "rubik-marker-hatch",
-      "homepage": "https://fonts.google.com/specimen/Rubik+Marker+Hatch/about",
-      "repository": "https://github.com/NaN-xyz/Glyph-Filters",
+      "name": "Carter One",
+      "homepage": "http://sansoxygen.com/",
       "licenses": [
         {
           "expression": "OFL-1.1",
-          "file": "licenses/rubik-marker-hatch.txt"
+          "file": "licenses/carter-one.txt"
         }
       ]
     }

@@ -4,9 +4,13 @@
   background: var(--lightgrey);
 }
 
+.header {
+  padding: 4px 6px;
+  display: flex;
+  flex-direction: row;
+}
+
 .name {
-  padding-left: 6px;
-  padding-top: 2px;
   font-weight: bold;
   color: var(--header-color);
 }
