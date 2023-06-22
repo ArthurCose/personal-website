@@ -2,8 +2,10 @@ import Link from "next/link";
 import Project from "@/components/project";
 
 import minicraftDsImage from "../../public/project-icons/minicraft-ds.png";
+import joshDevelopImage from "../../public/project-icons/josh-develop.png";
 import hexagonPuzzleImage from "../../public/project-icons/re4-hexagon-puzzle.png";
 import bnWordleImage from "../../public/project-icons/bn-wordle.png";
+import licenseRipperImage from "../../public/project-icons/license-ripper.png";
 import youtubeControlFixImage from "../../public/project-icons/youtube-control-fix.png";
 import watermarkRemoverImage from "../../public/project-icons/watermark-remover-bot.png";
 import arthurcoseImage from "../../public/project-icons/arthurcose.png";
@@ -11,9 +13,32 @@ import arthurcoseImage from "../../public/project-icons/arthurcose.png";
 export default function Projects() {
   return (
     <>
-      {/* <h2>Community</h2> */}
+      {/* <h2>Contributions</h2> */}
 
       <h2>Personal Projects</h2>
+
+      <Project
+        name="Watermark Remover Bot"
+        icon={watermarkRemoverImage}
+        repo="https://github.com/ArthurCose/watermark-remover-bot"
+        link="https://discord.com/api/oauth2/authorize?client_id=761447220586479647&scope=bot&permissions=274877949952"
+        linkName="Invite"
+      >
+        A <Link href="https://discord.com/">Discord</Link> bot that detects,
+        removes, and re-uploads posts containing{" "}
+        <Link href="https://ifunny.co/">iFunny</Link> and{" "}
+        <Link href="https://reddit.com/">Reddit</Link> watermarks.
+      </Project>
+
+      <Project
+        name="YouTube Control Fix"
+        icon={youtubeControlFixImage}
+        repo="https://github.com/ArthurCose/YouTube-Control-Fix"
+        link="https://chrome.google.com/webstore/detail/youtube-control-fix/pkemfahanpgdcdmgcehgblhagnhacpjo"
+      >
+        A browser extension that aims to make controlling YouTube videos using
+        the arrow keys consistent.
+      </Project>
 
       <Project
         name="Minicraft DS Edition"
@@ -23,6 +48,30 @@ export default function Projects() {
         A homebrew port of{" "}
         <Link href="https://en.wikipedia.org/wiki/Minicraft">Minicraft</Link> to
         the Nintendo DS.
+      </Project>
+
+      <Project
+        name="JoshDevelop"
+        icon={joshDevelopImage}
+        repo="https://github.com/ArthurCose/JoshDevelop/"
+        linkName="Video"
+        link="https://www.youtube.com/watch?v=cCpkSRIdujA"
+      >
+        A collaborative development environment I worked on for creating small
+        games from scratch with friends. Josh comes from the name of an old
+        friend&apos;s bunny.
+      </Project>
+
+      <Project
+        name="License Ripper"
+        icon={licenseRipperImage}
+        repo="https://github.com/ArthurCose/License-Ripper/"
+        link="https://www.npmjs.com/package/license-ripper"
+        linkName="npm"
+      >
+        A tool to find license and project info in npm dependencies, generates a
+        JSON file for further processing into a web page. Used to generate the{" "}
+        <Link href="/licenses">attribution</Link> page.
       </Project>
 
       <Project
@@ -63,37 +112,10 @@ export default function Projects() {
       </Project>
 
       <Project
-        name="YouTube Control Fix"
-        icon={youtubeControlFixImage}
-        repo="https://github.com/ArthurCose/YouTube-Control-Fix"
-        link="https://chrome.google.com/webstore/detail/youtube-control-fix/pkemfahanpgdcdmgcehgblhagnhacpjo"
-      >
-        A browser extension that aims to make controlling YouTube videos using
-        the arrow keys consistent.
-      </Project>
-
-      <Project
-        name="Watermark Remover Bot"
-        icon={watermarkRemoverImage}
-        repo="https://github.com/ArthurCose/watermark-remover-bot"
-        link="https://discord.com/api/oauth2/authorize?client_id=761447220586479647&scope=bot&permissions=274877949952"
-        linkName="Invite"
-      >
-        A <Link href="https://discord.com/">Discord</Link> bot that detects,
-        removes, and re-uploads posts containing{" "}
-        <Link href="https://ifunny.co/">iFunny</Link> and{" "}
-        <Link href="https://reddit.com/">Reddit</Link> watermarks.
-      </Project>
-
-      <Project
         name="arthurcose.dev"
         icon={arthurcoseImage}
         repo="https://github.com/ArthurCose/personal-website"
-      >
-        The website you&apos;re currently viewing. It&apos;s a little cheesy,
-        but I&apos;ve been needing a place to organize my work and it gave me an
-        excuse to try a bit of generative art. I&apos;m decently happy with it.
-      </Project>
+      />
     </>
   );
 }
