@@ -3,9 +3,17 @@ import styles from "@/styles/Splatter.module.css";
 
 const CANVAS_W = 600;
 const CANVAS_H = 800;
+
+// splats
+const REL_RANGE_MIN_CUTOFF = 1 / 6;
 const MIN_RANGE = 100;
 const MAX_RANGE = 500;
-const MAX_RANGE_BLOT_COUNT = 750;
+const MAX_RANGE_BLOT_COUNT = 500;
+
+// blots
+const HALF_MAX_BLOT_WIDTH = 0.5;
+const BLOT_HEIGHT_REL_MIN = 8;
+const BLOT_HEIGHT_REL_MAX = 80;
 
 export default function Splatter() {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -63,21 +71,25 @@ function splat(
   splatX: number,
   splatY: number,
   color: string,
-  range: number
+  rangeMax: number
 ) {
   ctx.save();
   ctx.translate(splatX, splatY);
   ctx.fillStyle = color;
 
-  const HALF_MAX_BLOT_WIDTH = 4;
-  const blotCount = Math.floor((range / MAX_RANGE) * MAX_RANGE_BLOT_COUNT);
+  const blotCount = Math.floor((rangeMax / MAX_RANGE) * MAX_RANGE_BLOT_COUNT);
+  const rangeMin = rangeMax * REL_RANGE_MIN_CUTOFF;
 
   for (let i = 0; i < blotCount; i++) {
-    const distance = Math.random() ** 2 * range;
+    const distance = lerp(rangeMin, rangeMax, Math.random() ** 2);
 
-    const normalizedDistance = distance / range;
+    const normalizedDistance = distance / rangeMax;
     const halfWidth = (1 - normalizedDistance) ** 2 * HALF_MAX_BLOT_WIDTH;
-    const halfHeight = lerp(halfWidth, halfWidth * 10, Math.random());
+    const halfHeight = lerp(
+      halfWidth * BLOT_HEIGHT_REL_MIN,
+      halfWidth * BLOT_HEIGHT_REL_MAX,
+      Math.random()
+    );
 
     ctx.rotate(Math.random() * Math.PI * 2);
     ctx.beginPath();
