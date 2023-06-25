@@ -64,6 +64,7 @@ body {
   flex-direction: column;
   position: sticky;
   top: var(--topbar-height);
+  transition: transform 200ms;
 }
 
 #sidebar .local-link {
@@ -109,7 +110,7 @@ body {
   #sidebar {
     position: fixed;
     border-right: 1px solid var(--lightgrey);
-    display: none;
+    transform: translate(-100%, 0);
   }
 
   #app-container {
