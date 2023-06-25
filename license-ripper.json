@@ -50,6 +50,17 @@
           "file": "licenses/carter-one.txt"
         }
       ]
+    },
+    {
+      "name": "Noto Emoji",
+      "homepage": "https://fonts.google.com/noto/specimen/Noto+Color+Emoji",
+      "repository": "https://github.com/googlefonts/noto-emoji",
+      "licenses": [
+        {
+          "expression": "OFL-1.1",
+          "file": "licenses/noto-emoji.txt"
+        }
+      ]
     }
   ]
 }
