@@ -1,3 +1,3 @@
-export default function Home() {
-  return <></>;
-}
+import Projects from "./projects";
+
+export default Projects;

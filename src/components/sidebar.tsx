@@ -11,8 +11,8 @@ export default function Sidebar({ open, setOpen }: Props) {
 
   return (
     <div id="sidebar" style={{ display: open ? "flex" : undefined }}>
-      <SidebarLink name="About" href="/" onClick={close} />
-      <SidebarLink name="Projects" href="/projects" onClick={close} />
+      {/* <SidebarLink name="About" href="/" onClick={close} /> */}
+      <SidebarLink name="Projects" href="/" onClick={close} />
       <SidebarLink name="Attribution" href="/licenses" onClick={close} />
     </div>
   );
