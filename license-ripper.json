@@ -2,6 +2,7 @@
   "includeHomepage": true,
   "includeRepository": true,
   "includeFunding": true,
+  "includeDescription": true,
   "exclude": [
     "@next/swc-linux-x64-gnu",
     "@next/swc-linux-x64-musl",
@@ -43,7 +44,9 @@
   "append": [
     {
       "name": "Carter One",
-      "homepage": "http://sansoxygen.com/",
+      "homepage": "https://fonts.google.com/specimen/Carter+One",
+      "funding": ["http://sansoxygen.com/"],
+      "description": "Used in the website logo",
       "licenses": [
         {
           "expression": "OFL-1.1",
@@ -55,6 +58,7 @@
       "name": "Noto Emoji",
       "homepage": "https://fonts.google.com/noto/specimen/Noto+Color+Emoji",
       "repository": "https://github.com/googlefonts/noto-emoji",
+      "description": "Used in the website favicon",
       "licenses": [
         {
           "expression": "OFL-1.1",

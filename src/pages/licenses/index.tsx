@@ -1,6 +1,5 @@
 import licenseMap from "@/_licenses.json";
-import Link from "next/link";
-import styles from "@/styles/Licenses.module.css";
+import AttributionListItem from "@/components/attribution_list_item";
 
 export default function Licenses() {
   return (
@@ -13,25 +12,8 @@ export default function Licenses() {
       <div>
         {licenseMap.packages.map((project) => {
           const key = project.name + "@" + project.version;
-          const keyUri = encodeURIComponent(key).replaceAll("%40", "@");
 
-          return (
-            <div key={key} className={styles.list_item}>
-              <div className={styles.project_name}>{project.name}</div>
-
-              <div className={styles.links}>
-                {project.homepage && (
-                  <Link href={project.homepage}>Website</Link>
-                )}
-
-                {project.repository?.startsWith("https://") && (
-                  <Link href={project.repository}>Repo</Link>
-                )}
-
-                <Link href={`/licenses/${keyUri}`}>License</Link>
-              </div>
-            </div>
-          );
+          return <AttributionListItem key={key} project={project} />;
         })}
       </div>
     </>

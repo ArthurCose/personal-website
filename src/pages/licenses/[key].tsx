@@ -2,6 +2,7 @@ import licenseMap from "@/_licenses.json";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "@/styles/Licenses.module.css";
+import AttributionListItem from "@/components/attribution_list_item";
 
 export default function License() {
   const router = useRouter();
@@ -13,7 +14,7 @@ export default function License() {
   }
   const atIndex = key.indexOf("@", 1);
   const name = key.slice(0, atIndex);
-  const version = key.slice(atIndex + 1);
+  // const version = key.slice(atIndex + 1);
 
   const project = licenseMap.packages.find((project) => project.name == name);
 
@@ -25,17 +26,7 @@ export default function License() {
 
   return (
     <>
-      <div className={styles.list_item}>
-        <div className={styles.project_name}>{project.name}</div>
-
-        <div className={styles.links}>
-          {project.homepage && <Link href={project.homepage}>Website</Link>}
-
-          {project.repository?.startsWith("https://") && (
-            <Link href={project.repository}>Repo</Link>
-          )}
-        </div>
-      </div>
+      <AttributionListItem project={project} />
       <br />
       <pre className={styles.license_text}>
         {project.licenses.map(
