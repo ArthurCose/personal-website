@@ -35,6 +35,7 @@ export default function Projects() {
         icon={youtubeControlFixImage}
         repo="https://github.com/ArthurCose/YouTube-Control-Fix"
         link="https://chrome.google.com/webstore/detail/youtube-control-fix/pkemfahanpgdcdmgcehgblhagnhacpjo"
+        linkName="Install"
       >
         A browser extension that aims to make controlling YouTube videos using
         the arrow keys consistent.
@@ -48,18 +49,6 @@ export default function Projects() {
         A homebrew port of{" "}
         <Link href="https://en.wikipedia.org/wiki/Minicraft">Minicraft</Link> to
         the Nintendo DS.
-      </Project>
-
-      <Project
-        name="JoshDevelop"
-        icon={joshDevelopImage}
-        repo="https://github.com/ArthurCose/JoshDevelop/"
-        linkName="Video"
-        link="https://www.youtube.com/watch?v=cCpkSRIdujA"
-      >
-        A collaborative development environment I worked on for creating small
-        games from scratch with friends. Josh comes from the name of an old
-        friend&apos;s bunny.
       </Project>
 
       <Project
@@ -79,6 +68,7 @@ export default function Projects() {
         icon={hexagonPuzzleImage}
         repo="https://github.com/ArthurCose/RE4-Hexagon-Puzzle/"
         link="https://arthurcose.github.io/RE4-Hexagon-Puzzle/"
+        linkName="Play"
       >
         <Link href="https://www.residentevil.com/re4/en-us/">
           Resident Evil 4
@@ -95,6 +85,7 @@ export default function Projects() {
         icon={bnWordleImage}
         repo="https://github.com/ArthurCose/BN-Wordle/"
         link="https://arthurcose.github.io/BN-Wordle/"
+        linkName="Play"
       >
         A puzzle game inspired by{" "}
         <Link href="https://www.nytimes.com/games/wordle/index.html">
@@ -109,6 +100,18 @@ export default function Projects() {
         <br />
         Controls: Arrow Keys, Z = Accept, X = Cancel, A/S = Rotate, and Refresh
         for a new word
+      </Project>
+
+      <Project
+        name="JoshDevelop"
+        icon={joshDevelopImage}
+        repo="https://github.com/ArthurCose/JoshDevelop/"
+        link="https://www.youtube.com/watch?v=cCpkSRIdujA"
+        linkName="Video"
+      >
+        A collaborative development environment I worked on for creating small
+        games from scratch with friends. Josh comes from the name of an old
+        friend&apos;s bunny.
       </Project>
 
       <Project

@@ -1,14 +1,15 @@
 .container {
   margin-bottom: 12px;
   border: 1px solid var(--lightgrey);
-  background: var(--lightgrey);
   border-radius: 4px;
+  background: var(--background);
 }
 
 .header {
   padding: 4px 6px;
   display: flex;
   flex-direction: row;
+  background: var(--lightgrey);
 }
 
 .name {
@@ -29,7 +30,6 @@
 }
 
 .descriptionContainer {
-  background: var(--background);
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -42,4 +42,5 @@
   justify-content: flex-end;
   gap: 8px;
   margin-top: auto;
+  padding-top: 8px;
 }

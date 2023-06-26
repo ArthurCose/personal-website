@@ -31,6 +31,10 @@
   color: var(--header-color);
 }
 
+.project_description {
+  min-height: 1em;
+}
+
 .license_text {
   overflow-x: auto;
 }

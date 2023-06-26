@@ -48,7 +48,7 @@ export default function AttributionListItem({ project }: { project: Project }) {
     <div className={styles.list_item}>
       <div className={styles.project_info}>
         <div className={styles.project_name}>{project.name}</div>
-        <div>{project.description}</div>
+        <div className={styles.project_description}>{project.description}</div>
       </div>
 
       <div className={styles.links}>
