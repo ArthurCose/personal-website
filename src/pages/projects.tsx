@@ -18,19 +18,6 @@ export default function Projects() {
       <h2>Personal Projects</h2>
 
       <Project
-        name="Watermark Remover Bot"
-        icon={watermarkRemoverImage}
-        repo="https://github.com/ArthurCose/watermark-remover-bot"
-        link="https://discord.com/api/oauth2/authorize?client_id=761447220586479647&scope=bot&permissions=274877949952"
-        linkName="Invite"
-      >
-        A <Link href="https://discord.com/">Discord</Link> bot that detects,
-        removes, and re-uploads posts containing{" "}
-        <Link href="https://ifunny.co/">iFunny</Link> and{" "}
-        <Link href="https://reddit.com/">Reddit</Link> watermarks.
-      </Project>
-
-      <Project
         name="YouTube Control Fix"
         icon={youtubeControlFixImage}
         repo="https://github.com/ArthurCose/YouTube-Control-Fix"
@@ -100,6 +87,19 @@ export default function Projects() {
         <br />
         Controls: Arrow Keys, Z = Accept, X = Cancel, A/S = Rotate, and Refresh
         for a new word
+      </Project>
+
+      <Project
+        name="Watermark Remover Bot"
+        icon={watermarkRemoverImage}
+        repo="https://github.com/ArthurCose/watermark-remover-bot"
+        link="https://discord.com/api/oauth2/authorize?client_id=761447220586479647&scope=bot&permissions=274877949952"
+        linkName="Invite"
+      >
+        A <Link href="https://discord.com/">Discord</Link> bot that detects,
+        removes, and re-uploads posts containing{" "}
+        <Link href="https://ifunny.co/">iFunny</Link> and{" "}
+        <Link href="https://reddit.com/">Reddit</Link> watermarks.
       </Project>
 
       <Project
