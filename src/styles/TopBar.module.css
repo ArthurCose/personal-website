@@ -7,7 +7,7 @@
   color: var(--topbar-text-color);
   height: var(--topbar-height);
   display: flex;
-  border-bottom: 2px solid var(--lightgrey);
+  border-bottom: 3px solid var(--lightgrey);
 }
 
 .homelink {

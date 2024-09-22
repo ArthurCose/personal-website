@@ -1,7 +1,7 @@
 .container {
   margin-bottom: 12px;
-  border: 1px solid var(--lightgrey);
-  border-radius: 4px;
+  border: 2px solid var(--lightgrey);
+  border-radius: 6px;
   background: var(--background);
 }
 
