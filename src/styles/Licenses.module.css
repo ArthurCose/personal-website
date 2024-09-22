@@ -8,7 +8,7 @@
 }
 
 .list_item:nth-child(odd) {
-  background: var(--lightgrey);
+  background: var(--darkgrey);
 }
 
 .links {

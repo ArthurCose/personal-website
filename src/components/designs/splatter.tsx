@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
-import styles from "@/styles/Splatter.module.css";
+import styles from "@/styles/Designs.module.css";
+import { lerp } from "./shared";
 
 const CANVAS_W = 600;
 const CANVAS_H = 800;
@@ -97,8 +98,4 @@ function splat(
     ctx.fill();
   }
   ctx.restore();
-}
-
-function lerp(start: number, end: number, progress: number): number {
-  return (end - start) * progress + start;
 }

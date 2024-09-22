@@ -3,7 +3,7 @@ import { useState } from "react";
 import Head from "next/head";
 import Sidebar from "@/components/sidebar";
 import TopBar from "@/components/topbar";
-import Splatter from "@/components/splatter";
+import Depth from "@/components/designs/depth";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </div>
       </div>
 
-      <Splatter />
+      <Depth />
     </>
   );
 }

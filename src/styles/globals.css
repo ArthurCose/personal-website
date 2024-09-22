@@ -1,7 +1,4 @@
 :root {
-  --text-color: lightgrey;
-  --link-color: white;
-  --sidebar-local-link: #333;
   --sidebar-link-hover: color-mix(
     in srgb,
     var(--sidebar-local-link) 50%,
@@ -12,12 +9,18 @@
     var(--sidebar-local-link) 80%,
     transparent
   );
+  --topbar-height: 50px;
+}
+
+:root {
+  --text-color: lightgrey;
+  --link-color: white;
+  --sidebar-local-link: #333;
   --header-color: white;
   --background: black;
   --lightgrey: #222;
+  --darkgrey: #111;
   --topbar-text-color: white;
-  --topbar-background: #333;
-  --topbar-height: 50px;
 }
 
 html {
@@ -61,11 +64,10 @@ body {
 
 #app-container {
   display: flex;
+  justify-content: center;
 }
 
 #sidebar {
-  background: var(--background);
-  padding: 8px;
   width: 200px;
   height: calc(100vh - var(--topbar-height));
   display: flex;
@@ -75,30 +77,29 @@ body {
   transition: transform 200ms;
 }
 
-#sidebar > * {
-  margin-bottom: 4px;
-}
-
 #sidebar > a {
   padding: 8px;
+  padding-left: 16px;
+  border-left: 3.5px solid #444;
   text-decoration: none;
-  border-radius: 4px;
-  transition-duration: 150ms;
-  transition-property: background-color, color;
+  transition-duration: 200ms;
+  transition-property: border-color;
 }
 
 #sidebar > a:hover {
-  background-color: var(--sidebar-link-hover);
-  padding: 8px;
+  border-left: 4px solid white;
 }
 
-#sidebar .local-link,
-#sidebar a:active {
-  background-color: var(--sidebar-link-active);
+#sidebar .local-link {
+  border-left: 3.5px solid #bbb;
 }
 
-#sidebar .local-link:hover:not(:active) {
-  background-color: var(--sidebar-local-link);
+#sidebar .local-link {
+  font-weight: bold;
+}
+
+#sidebar a:hover {
+  text-decoration: underline;
 }
 
 #main-content {
@@ -137,6 +138,11 @@ body {
     position: fixed;
     border-right: 1px solid var(--lightgrey);
     transform: translate(-100%, 0);
+    background: var(--background);
+  }
+
+  #sidebar > a {
+    border-left: 4px solid transparent;
   }
 
   #app-container {

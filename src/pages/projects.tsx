@@ -16,6 +16,9 @@ export default function Projects() {
       {/* <h2>Contributions</h2> */}
 
       <h2>Personal Projects</h2>
+      <p>Some of my publicly available projects.</p>
+
+      <br />
 
       <Project
         name="YouTube Control Fix"
