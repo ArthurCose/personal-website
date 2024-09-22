@@ -6,6 +6,7 @@
   "exclude": [
     "@next/swc-linux-x64-gnu",
     "@next/swc-linux-x64-musl",
+    "@swc/counter",
     "client-only"
   ],
   "overrides": {
