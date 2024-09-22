@@ -136,7 +136,7 @@ body {
 @media (max-width: 800px) {
   #sidebar {
     position: fixed;
-    border-right: 1px solid var(--lightgrey);
+    border-right: 2px solid var(--lightgrey);
     transform: translate(-100%, 0);
     background: var(--background);
   }
