@@ -61,7 +61,6 @@ body {
   display: flex;
   max-width: 1000px;
   background: color-mix(in srgb, var(--background), #004c 100%);
-  backdrop-filter: var(--backdrop-filter);
 }
 
 body,
@@ -138,6 +137,12 @@ body,
 }
 
 @media (max-width: 800px) {
+  #sidebar,
+  #main-content {
+    /* applying independently avoids a chrome bug with the sidebar's position property */
+    backdrop-filter: var(--backdrop-filter);
+  }
+
   #sidebar {
     position: fixed;
     top: var(--topbar-height);
@@ -167,6 +172,11 @@ body,
 }
 
 @media (min-width: 801px) {
+  #app-container {
+    /* avoid seams at the sidebar boundary*/
+    backdrop-filter: var(--backdrop-filter);
+  }
+
   #topbar {
     position: absolute;
     border-bottom: 0;
