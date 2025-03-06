@@ -34,7 +34,22 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  gap: 8px;
   margin-top: auto;
   padding-top: 8px;
+  margin-right: -8px;
+  margin-bottom: -4px;
+}
+
+.link,
+.link:hover {
+  text-decoration: none;
+  padding: 4px;
+}
+
+.linkIcon {
+  font-size: 30px;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
 }

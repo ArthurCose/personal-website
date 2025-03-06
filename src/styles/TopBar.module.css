@@ -26,12 +26,11 @@
 }
 
 .linkedIn {
-  background: center / contain no-repeat url("/linked-in-mark.png");
+  background: center / contain no-repeat url("/trademarks/linked-in.png");
 }
 
 .github {
-  background: center / contain no-repeat
-    url("/github-mark/github-mark-white.svg");
+  background: center / contain no-repeat url("/trademarks/github-white.svg");
 }
 
 .email {

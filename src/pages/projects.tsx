@@ -24,8 +24,16 @@ export default function Projects() {
         name="YouTube Control Fix"
         icon={youtubeControlFixImage}
         repo="https://github.com/ArthurCose/YouTube-Control-Fix"
-        link="https://chrome.google.com/webstore/detail/youtube-control-fix/pkemfahanpgdcdmgcehgblhagnhacpjo"
-        linkName="Install"
+        links={[
+          {
+            icon: "chromium",
+            href: "https://chrome.google.com/webstore/detail/youtube-control-fix/pkemfahanpgdcdmgcehgblhagnhacpjo",
+          },
+          {
+            icon: "firefox",
+            href: "https://addons.mozilla.org/en-US/firefox/addon/youtube-control-fix",
+          },
+        ]}
       >
         A browser extension that aims to make controlling YouTube videos using
         the arrow keys consistent.
@@ -45,8 +53,12 @@ export default function Projects() {
         name="License Ripper"
         icon={licenseRipperImage}
         repo="https://github.com/ArthurCose/License-Ripper/"
-        link="https://www.npmjs.com/package/license-ripper"
-        linkName="npm"
+        links={[
+          {
+            icon: "generic",
+            href: "https://www.npmjs.com/package/license-ripper",
+          },
+        ]}
       >
         A tool to find license and project info in npm dependencies, generates a
         JSON file for further processing into a web page. Used to generate the{" "}
@@ -57,8 +69,12 @@ export default function Projects() {
         name="RE4 Hexagon Puzzle"
         icon={hexagonPuzzleImage}
         repo="https://github.com/ArthurCose/RE4-Hexagon-Puzzle/"
-        link="https://arthurcose.github.io/RE4-Hexagon-Puzzle/"
-        linkName="Play"
+        links={[
+          {
+            icon: "generic",
+            href: "https://arthurcose.github.io/RE4-Hexagon-Puzzle/",
+          },
+        ]}
       >
         <Link href="https://www.residentevil.com/re4/en-us/">
           Resident Evil 4
@@ -74,8 +90,12 @@ export default function Projects() {
         name="BN Wordle"
         icon={bnWordleImage}
         repo="https://github.com/ArthurCose/BN-Wordle/"
-        link="https://arthurcose.github.io/BN-Wordle/"
-        linkName="Play"
+        links={[
+          {
+            icon: "generic",
+            href: "https://arthurcose.github.io/BN-Wordle/",
+          },
+        ]}
       >
         A puzzle game inspired by{" "}
         <Link href="https://www.nytimes.com/games/wordle/index.html">
@@ -96,8 +116,12 @@ export default function Projects() {
         name="Watermark Remover Bot"
         icon={watermarkRemoverImage}
         repo="https://github.com/ArthurCose/watermark-remover-bot"
-        link="https://discord.com/api/oauth2/authorize?client_id=761447220586479647&scope=bot&permissions=274877949952"
-        linkName="Invite"
+        links={[
+          {
+            icon: "invite_to_discord",
+            href: "https://discord.com/api/oauth2/authorize?client_id=761447220586479647&scope=bot&permissions=274877949952",
+          },
+        ]}
       >
         A <Link href="https://discord.com/">Discord</Link> bot that detects,
         removes, and re-uploads posts containing{" "}
@@ -109,8 +133,12 @@ export default function Projects() {
         name="JoshDevelop"
         icon={joshDevelopImage}
         repo="https://github.com/ArthurCose/JoshDevelop/"
-        link="https://www.youtube.com/watch?v=cCpkSRIdujA"
-        linkName="Video"
+        links={[
+          {
+            icon: "video",
+            href: "https://www.youtube.com/watch?v=cCpkSRIdujA",
+          },
+        ]}
       >
         A collaborative development environment I built to create games from
         scratch with friends. Josh is a nickname for a bunny an old friend of

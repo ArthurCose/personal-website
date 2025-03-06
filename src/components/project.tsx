@@ -8,12 +8,54 @@ type ProjectProps = {
   icon: StaticImageData | string;
   iconHeight?: number;
   repo?: string;
-  link?: string;
-  linkName?: string;
+  links?: {
+    icon: "firefox" | "chromium" | "invite_to_discord" | "video" | "generic";
+    href: string;
+  }[];
   children?: ReactNode;
 };
 
+function createBackgroundStyle(url: string): React.CSSProperties {
+  return {
+    background: `url(${url})`,
+    backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+  };
+}
+
 export default function Project(props: ProjectProps) {
+  const links = props.links?.map((link) => {
+    let child;
+    let iconStyle: React.CSSProperties | undefined;
+
+    switch (link.icon) {
+      case "chromium":
+        iconStyle = createBackgroundStyle("/trademarks/chromium.svg");
+        break;
+      case "firefox":
+        iconStyle = createBackgroundStyle("/trademarks/firefox.png");
+        break;
+      case "invite_to_discord":
+        iconStyle = createBackgroundStyle("/trademarks/discord-color.png");
+        break;
+      case "video":
+        child = "📺";
+        break;
+      case "generic":
+        child = "🔗";
+        break;
+    }
+
+    return (
+      <Link key={link.href} className={styles.link} href={link.href}>
+        <div className={styles.linkIcon} style={iconStyle}>
+          {child}
+        </div>
+      </Link>
+    );
+  });
+
   return (
     <div className={styles.container}>
       <div className={styles.detailContainer}>
@@ -32,9 +74,15 @@ export default function Project(props: ProjectProps) {
           <div>{props.children}</div>
 
           <div className={styles.links}>
-            {props.repo && <Link href={props.repo}>GitHub</Link>}
-            {props.link && (
-              <Link href={props.link}>{props.linkName || "View"}</Link>
+            {links}
+
+            {props.repo && (
+              <Link className={styles.link} href={props.repo}>
+                <div
+                  className={styles.linkIcon}
+                  style={createBackgroundStyle("/trademarks/github-white.svg")}
+                />
+              </Link>
             )}
           </div>
         </div>
