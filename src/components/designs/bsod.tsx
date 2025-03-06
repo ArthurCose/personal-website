@@ -19,7 +19,7 @@ const animationCss = `
     background-position: 0px 0px;
   }
   to {
-    background-position: -${WIDTH * SCALE}px ${HEIGHT * SCALE}px;
+    background-position: ${WIDTH * SCALE}px ${HEIGHT * SCALE}px;
   }
 }
 `;
