@@ -60,7 +60,8 @@ body {
 #app-container {
   display: flex;
   max-width: 1000px;
-  background: var(--background);
+  background: color-mix(in srgb, var(--background), #004c 100%);
+  backdrop-filter: var(--backdrop-filter);
 }
 
 body,

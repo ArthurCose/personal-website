@@ -5,8 +5,8 @@ export default function About() {
 
       <p>
         I am a Software Engineer in the EST time zone with professional
-        experience in C++, JavaScript + TypeScript, React-based front end / full
-        stack frameworks, and MongoDB.
+        experience in C++, JavaScript + TypeScript, React-based frameworks, and
+        MongoDB.
       </p>
       <br />
 
