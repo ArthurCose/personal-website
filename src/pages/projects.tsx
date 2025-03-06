@@ -112,9 +112,9 @@ export default function Projects() {
         link="https://www.youtube.com/watch?v=cCpkSRIdujA"
         linkName="Video"
       >
-        A collaborative development environment I worked on for creating small
-        games from scratch with friends. Josh comes from the name of an old
-        friend&apos;s bunny.
+        A collaborative development environment I built to create games from
+        scratch with friends. Josh is a nickname for a bunny an old friend of
+        mine had.
       </Project>
 
       <Project

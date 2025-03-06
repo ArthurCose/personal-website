@@ -44,6 +44,17 @@
   },
   "append": [
     {
+      "name": "Press Start 2P",
+      "homepage": "https://fonts.google.com/specimen/Press+Start+2P",
+      "description": "Used in the background",
+      "licenses": [
+        {
+          "expression": "OFL-1.1",
+          "file": "licenses/press-start-2p.txt"
+        }
+      ]
+    },
+    {
       "name": "Noto Emoji",
       "homepage": "https://fonts.google.com/noto/specimen/Noto+Color+Emoji",
       "repository": "https://github.com/googlefonts/noto-emoji",

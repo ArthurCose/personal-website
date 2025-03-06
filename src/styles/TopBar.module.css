@@ -7,7 +7,7 @@
   color: var(--topbar-text-color);
   height: var(--topbar-height);
   display: flex;
-  border-bottom: 3px solid var(--lightgrey);
+  border-bottom: 3px solid var(--border-color);
 }
 
 .externalLinks {
@@ -47,7 +47,7 @@
   transform: translate(-50%, 0%);
   pointer-events: none;
   background: var(--background);
-  border: 1px solid var(--lightgrey);
+  border: 1px solid var(--border-color);
   padding: 0px 4px;
   filter: invert();
   white-space: nowrap;

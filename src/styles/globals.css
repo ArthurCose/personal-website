@@ -1,26 +1,21 @@
 :root {
-  --sidebar-link-hover: color-mix(
-    in srgb,
-    var(--sidebar-local-link) 50%,
-    transparent
-  );
-  --sidebar-link-active: color-mix(
-    in srgb,
-    var(--sidebar-local-link) 80%,
-    transparent
-  );
   --topbar-height: 50px;
 }
 
 :root {
   --text-color: lightgrey;
   --link-color: white;
-  --sidebar-local-link: #333;
+
+  --sidebar-link: #fff3;
+  --sidebar-hover-link: white;
+  --sidebar-local-link: #fffc;
   --header-color: white;
-  --background: black;
-  --lightgrey: #222;
-  --darkgrey: #111;
+  --background: #004;
+  --border-color: transparent;
+  --darkgrey: #114;
   --topbar-text-color: white;
+  --content-background: #fff1;
+  --backdrop-filter: blur(8px);
 }
 
 html {
@@ -48,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 html,
@@ -64,12 +59,22 @@ body {
 
 #app-container {
   display: flex;
-  justify-content: center;
+  max-width: 1000px;
+  background: var(--background);
+}
+
+body,
+#__next {
+  pointer-events: none;
+}
+
+#__next > * {
+  pointer-events: all;
 }
 
 #sidebar {
   width: 200px;
-  height: calc(100vh - var(--topbar-height));
+  height: 100vh;
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -79,18 +84,18 @@ body {
 #sidebar > a {
   padding: 8px;
   padding-left: 16px;
-  border-left: 3.5px solid #444;
+  border-left: 3.5px solid var(--sidebar-link);
   text-decoration: none;
   transition-duration: 200ms;
   transition-property: border-color;
 }
 
 #sidebar > a:hover {
-  border-left: 4px solid white;
+  border-left: 4px solid var(--sidebar-hover-link);
 }
 
 #sidebar .local-link {
-  border-left: 3.5px solid #bbb;
+  border-left: 3.5px solid var(--sidebar-local-link);
 }
 
 #sidebar .local-link {
@@ -102,7 +107,6 @@ body {
 }
 
 #main-content {
-  max-width: 800px;
   padding: 16px 8px;
   flex: 1;
   overflow-x: auto;
@@ -132,23 +136,12 @@ body {
   cursor: pointer;
 }
 
-@media (min-width: 801px) {
-  #topbar {
-    position: absolute;
-    border-bottom: 0;
-    background: none;
-  }
-
-  #sidebar {
-    padding-top: 16px;
-  }
-}
-
 @media (max-width: 800px) {
   #sidebar {
     position: fixed;
     top: var(--topbar-height);
-    border-right: 2px solid var(--lightgrey);
+    height: calc(100vh - var(--topbar-height));
+    border-right: 2px solid var(--border-color);
     transform: translate(-100%, 0);
     background: var(--background);
   }
@@ -163,5 +156,29 @@ body {
 
   #hamburger {
     display: block;
+  }
+}
+
+#topbar,
+#sidebar {
+  /* elements with backdrop-filter seem to draw over us without this */
+  z-index: 1;
+}
+
+@media (min-width: 801px) {
+  #topbar {
+    position: absolute;
+    border-bottom: 0;
+    background: none;
+    pointer-events: none;
+  }
+
+  #topbar > * {
+    pointer-events: all;
+  }
+
+  #sidebar {
+    padding-top: 12px;
+    padding-left: 8px;
   }
 }

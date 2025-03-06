@@ -4,11 +4,10 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   padding: 4px 8px;
-  background: var(--background);
 }
 
-.list_item:nth-child(odd) {
-  background: var(--darkgrey);
+.list_item:nth-child(even) {
+  background: var(--content-background);
 }
 
 .links {

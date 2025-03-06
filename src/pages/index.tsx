@@ -1,3 +1,3 @@
-import Projects from "./projects";
+import About from "./about";
 
-export default Projects;
+export default About;
