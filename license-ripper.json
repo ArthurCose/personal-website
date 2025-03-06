@@ -44,18 +44,6 @@
   },
   "append": [
     {
-      "name": "Carter One",
-      "homepage": "https://fonts.google.com/specimen/Carter+One",
-      "funding": ["http://sansoxygen.com/"],
-      "description": "Used in the website logo",
-      "licenses": [
-        {
-          "expression": "OFL-1.1",
-          "file": "licenses/carter-one.txt"
-        }
-      ]
-    },
-    {
       "name": "Noto Emoji",
       "homepage": "https://fonts.google.com/noto/specimen/Noto+Color+Emoji",
       "repository": "https://github.com/googlefonts/noto-emoji",

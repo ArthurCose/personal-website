@@ -73,7 +73,6 @@ body {
   display: flex;
   flex-direction: column;
   position: sticky;
-  top: var(--topbar-height);
   transition: transform 200ms;
 }
 
@@ -133,9 +132,22 @@ body {
   cursor: pointer;
 }
 
+@media (min-width: 801px) {
+  #topbar {
+    position: absolute;
+    border-bottom: 0;
+    background: none;
+  }
+
+  #sidebar {
+    padding-top: 16px;
+  }
+}
+
 @media (max-width: 800px) {
   #sidebar {
     position: fixed;
+    top: var(--topbar-height);
     border-right: 2px solid var(--lightgrey);
     transform: translate(-100%, 0);
     background: var(--background);

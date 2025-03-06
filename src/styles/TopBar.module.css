@@ -10,18 +10,6 @@
   border-bottom: 3px solid var(--lightgrey);
 }
 
-.homelink {
-  color: white;
-  text-decoration: none;
-  font-size: 32px;
-  margin: auto 8px;
-  display: inline-block;
-}
-
-.homelink:hover {
-  text-decoration: none;
-}
-
 .externalLinks {
   display: flex;
   flex-direction: row;

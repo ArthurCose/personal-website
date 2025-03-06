@@ -1,7 +1,5 @@
 import Link from "next/link";
 import styles from "@/styles/TopBar.module.css";
-import { Carter_One as TitleFont } from "next/font/google";
-import classNames from "classnames";
 
 // Alata
 // Anek_Latin
@@ -14,8 +12,6 @@ import classNames from "classnames";
 // Rubik_Marker_Hatch
 // Rubik_Glitch
 
-const titleFont = TitleFont({ weight: "400", subsets: ["latin"] });
-
 type Props = {
   sidebarOpen: boolean;
   setSidebarOpen: (open: boolean) => void;
@@ -23,7 +19,7 @@ type Props = {
 
 export default function TopBar({ sidebarOpen, setSidebarOpen }: Props) {
   return (
-    <div className={styles.topbar}>
+    <div id="topbar" className={styles.topbar}>
       <button
         id="hamburger"
         onClick={(e) => {
@@ -31,13 +27,6 @@ export default function TopBar({ sidebarOpen, setSidebarOpen }: Props) {
           setSidebarOpen(!sidebarOpen);
         }}
       />
-
-      <Link
-        className={classNames(styles.homelink, titleFont.className)}
-        href="/"
-      >
-        ArthurCose
-      </Link>
 
       <div className={styles.externalLinks}>
         <Link
