@@ -2,6 +2,7 @@ import { Press_Start_2P } from "next/font/google";
 import styles from "@/styles/Designs.module.css";
 import { CSSProperties, useEffect, useState } from "react";
 import CatMoo from "../widgets/cat_moo";
+import classNames from "classnames";
 
 const font = Press_Start_2P({ weight: "400", subsets: ["latin"] });
 
@@ -13,7 +14,18 @@ const WIDTH = 256;
 const HEIGHT = 256;
 const SCALE = 2;
 
-const animationCss = `
+function generateCss(url: string) {
+  return `
+.bsod {
+  background: url(${url}) repeat;
+  background-size: ${WIDTH * SCALE}px ${HEIGHT * SCALE}px;
+  image-rendering: pixelated;
+  animation-name: bsod;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 @keyframes bsod {
   from {
     background-position: 0px 0px;
@@ -23,11 +35,21 @@ const animationCss = `
   }
 }
 `;
+}
 
-export default function BSOD() {
+export default function BSOD({
+  reduceAnimations,
+}: {
+  reduceAnimations: boolean;
+}) {
   const [style, setStyle] = useState<CSSProperties | undefined>(undefined);
 
   useEffect(() => {
+    if (reduceAnimations) {
+      setStyle(undefined);
+      return;
+    }
+
     const canvas = new OffscreenCanvas(WIDTH, HEIGHT);
     const ctx = canvas.getContext("2d")!;
 
@@ -36,43 +58,30 @@ export default function BSOD() {
 
     const text = "Welcome!";
     const metrics = ctx.measureText(text);
-    const textWidth = metrics.width;
     const textHeight =
       metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
     console.log(styles.isometric_bg_loop);
 
-    // ctx.setTransform(1, , -1, 1, 0, 0);
     ctx.fillText(text, 0, textHeight + metrics.actualBoundingBoxAscent);
     ctx.fillText(text, WIDTH / 2, HEIGHT / 2 + metrics.actualBoundingBoxAscent);
 
-    // ctx.strokeStyle = "white";
-    // ctx.strokeRect(0, 0, canvas.width, canvas.height);
-
-    canvas.convertToBlob().then((blob) => {
+    const stylePromise = canvas.convertToBlob().then((blob) => {
       const url = URL.createObjectURL(blob);
-      setStyle({
-        background: `url(${url}) repeat`,
-        backgroundSize: `${WIDTH * SCALE}px ${HEIGHT * SCALE}px`,
-        imageRendering: "pixelated",
-        animationName: "bsod",
-        animationDuration: "5s",
-        animationIterationCount: "infinite",
-        animationTimingFunction: "linear",
-      });
+
+      const styleElement = document.createElement("style");
+      styleElement.innerHTML = generateCss(url);
+      document.head.append(styleElement);
+
+      return styleElement;
     });
 
-    const styleElement = document.createElement("style");
-    styleElement.innerHTML = animationCss;
-    document.head.append(styleElement);
-
     return () => {
-      // remove the element for hot reload
-      styleElement.remove();
+      stylePromise.then((styleElement) => styleElement.remove());
     };
-  }, []);
+  }, [reduceAnimations]);
 
   return (
-    <div className={styles.full_fixed} style={style}>
+    <div className={classNames("bsod", styles.full_fixed)} style={style}>
       <CatMoo
         color="white"
         font={`32px ${font.style.fontFamily}`}

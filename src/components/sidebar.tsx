@@ -1,12 +1,21 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import styles from "@/styles/Sidebar.module.css";
+import classNames from "classnames";
 
 type Props = {
   open: boolean;
   setOpen: (open: boolean) => void;
+  reduceAnimations: boolean;
+  setReduceAnimations: (enable: boolean) => void;
 };
 
-export default function Sidebar({ open, setOpen }: Props) {
+export default function Sidebar({
+  open,
+  setOpen,
+  reduceAnimations,
+  setReduceAnimations,
+}: Props) {
   const close = () => setOpen(false);
 
   return (
@@ -14,7 +23,31 @@ export default function Sidebar({ open, setOpen }: Props) {
       <SidebarLink name="About" href="/" onClick={close} />
       <SidebarLink name="Projects" href="/projects" onClick={close} />
       <SidebarLink name="Attribution" href="/licenses" onClick={close} />
+
+      <div className={styles.options}>
+        <SidebarOption
+          enabled={reduceAnimations}
+          onClick={() => setReduceAnimations(!reduceAnimations)}
+        >
+          Reduce Animations
+        </SidebarOption>
+      </div>
     </div>
+  );
+}
+
+function SidebarOption({
+  enabled,
+  onClick,
+  children,
+}: { enabled?: boolean; onClick: () => void } & React.PropsWithChildren) {
+  return (
+    <a href="javascript:void(0)" onClick={onClick}>
+      {children}
+      {enabled != undefined && (
+        <span className={classNames(!enabled && styles.hidden)}>{" ✅"}</span>
+      )}
+    </a>
   );
 }
 

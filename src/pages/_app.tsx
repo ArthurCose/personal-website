@@ -8,6 +8,7 @@ import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [open, setOpen] = useState(false);
+  const [reduceAnimations, setReduceAnimations] = useState(false);
 
   return (
     <>
@@ -21,14 +22,19 @@ export default function App({ Component, pageProps }: AppProps) {
       <TopBar sidebarOpen={open} setSidebarOpen={setOpen} />
 
       <div id="app-container">
-        <Sidebar open={open} setOpen={setOpen} />
+        <Sidebar
+          open={open}
+          setOpen={setOpen}
+          reduceAnimations={reduceAnimations}
+          setReduceAnimations={setReduceAnimations}
+        />
 
         <div id="main-content" onClick={() => setOpen(false)}>
           <Component {...pageProps} />
         </div>
       </div>
 
-      <BSOD />
+      <BSOD reduceAnimations={reduceAnimations} />
     </>
   );
 }

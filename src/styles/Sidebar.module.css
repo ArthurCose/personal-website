@@ -1,0 +1,17 @@
+.options {
+  margin-top: auto;
+  margin-bottom: 8px;
+}
+
+.options > a {
+  display: block;
+  line-height: 110%;
+  text-decoration: none;
+  width: 100%;
+  padding: 8px;
+  text-align: center;
+}
+
+.hidden {
+  visibility: hidden;
+}

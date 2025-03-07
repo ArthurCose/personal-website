@@ -33,10 +33,6 @@ a {
   text-decoration: underline;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
 h1,
 h2,
 h3,
@@ -100,10 +96,6 @@ body,
 
 #sidebar .local-link {
   font-weight: bold;
-}
-
-#sidebar a:hover {
-  text-decoration: underline;
 }
 
 #main-content {
