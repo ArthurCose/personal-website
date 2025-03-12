@@ -18,8 +18,6 @@ const pieceList = [
   { src: "/art/blackfisk/Fisk.png" },
   { src: "/art/blackfisk/Background.png", wide: true },
   { src: "/art/blackfisk/Explosion.png", wide: true },
-  { src: "/art/blackfisk/BlackFisk.png", wide: true },
-  { src: "/art/blackfisk/TeamProva.png", wide: true },
   { src: "/art/blackfisk/icon.ico" },
 ];
 
