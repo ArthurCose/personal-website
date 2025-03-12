@@ -9,7 +9,7 @@
 }
 
 .item_container {
-  width: calc(33.3% - 8px * 2);
+  width: calc(100% / 3 - 8px);
   aspect-ratio: 1;
   display: flex;
   justify-content: center;
