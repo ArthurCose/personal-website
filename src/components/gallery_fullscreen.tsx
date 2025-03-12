@@ -21,7 +21,15 @@ export default function GalleryFullscreen({
 }: Props) {
   // handle keyboard
   useEffect(() => {
+    if (index == undefined) {
+      return index;
+    }
+
     const listener = (e: KeyboardEvent) => {
+      if (!e.ctrlKey && !e.shiftKey) {
+        e.preventDefault();
+      }
+
       setIndex((index) => {
         if (index == undefined) {
           return index;
@@ -31,8 +39,10 @@ export default function GalleryFullscreen({
           return index == 0 ? totalItems - 1 : index - 1;
         } else if (e.key == "ArrowRight") {
           return (index + 1) % totalItems;
-        } else {
+        } else if (e.key == "Escape") {
           return undefined;
+        } else {
+          return index;
         }
       });
     };
@@ -42,7 +52,7 @@ export default function GalleryFullscreen({
     return () => {
       document.removeEventListener("keydown", listener);
     };
-  }, []);
+  }, [index]);
 
   if (index == undefined) {
     return;
