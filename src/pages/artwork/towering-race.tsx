@@ -35,7 +35,7 @@ function Piece({ src, wide, onClick }: PieceProps) {
   );
 }
 
-export default function HubOsBackgrounds() {
+export default function () {
   const [index, setIndex] = useState<number | undefined>(undefined);
 
   return (
@@ -44,7 +44,7 @@ export default function HubOsBackgrounds() {
         Some screenshots and art from a game I made in class around 2014. It's
         not online anywhere since... It's not that good. I might put it up
         somewhere eventually for the sake of preserving my own history and to
-        showcase my own progress, but for now this page will suffice.
+        showcase my progress, but for now this page will suffice.
       </p>
 
       <br />

@@ -37,7 +37,7 @@ function Piece({ src, wide, onClick }: PieceProps) {
   );
 }
 
-export default function HubOsBackgrounds() {
+export default function () {
   const [index, setIndex] = useState<number | undefined>(undefined);
 
   return (

@@ -80,7 +80,7 @@ function Piece<T extends new () => Theme>({
   );
 }
 
-export default function HubOsBackgrounds() {
+export default function () {
   const [index, setIndex] = useState<number | undefined>(undefined);
 
   return (
