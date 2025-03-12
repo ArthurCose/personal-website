@@ -2,6 +2,7 @@ import styles from "@/styles/Gallery.module.css";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Press_Start_2P } from "next/font/google";
+import { useNavigationGuard } from "next-navigation-guard";
 
 const font = Press_Start_2P({ weight: "400", subsets: ["latin"] });
 
@@ -39,6 +40,17 @@ export default function GalleryFullscreen({
   totalItems,
   renderItem,
 }: Props) {
+  const guard = useNavigationGuard({ enabled: index != undefined });
+
+  useEffect(() => {
+    if (!guard.active) {
+      return;
+    }
+
+    guard.reject();
+    setIndex(undefined);
+  }, [guard.active]);
+
   // handle keyboard
   useEffect(() => {
     if (index == undefined) {
@@ -46,9 +58,11 @@ export default function GalleryFullscreen({
     }
 
     const listener = (e: KeyboardEvent) => {
-      if (!e.ctrlKey && !e.shiftKey && !e.altKey) {
-        e.preventDefault();
+      if (e.ctrlKey || e.shiftKey || e.altKey) {
+        return;
       }
+
+      e.preventDefault();
 
       if (e.key == "ArrowLeft") {
         updateIndex(setIndex, totalItems, -1);

@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import { useState } from "react";
 import Head from "next/head";
+import { NavigationGuardProvider } from "next-navigation-guard";
 import Sidebar from "@/components/sidebar";
 import TopBar from "@/components/topbar";
 import BSOD from "@/components/designs/bsod";
@@ -11,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const [reduceAnimations, setReduceAnimations] = useState(false);
 
   return (
-    <>
+    <NavigationGuardProvider>
       <Head>
         <title>ArthurCose</title>
         <meta name="description" content="" />
@@ -35,6 +36,6 @@ export default function App({ Component, pageProps }: AppProps) {
       </div>
 
       <BSOD reduceAnimations={reduceAnimations} />
-    </>
+    </NavigationGuardProvider>
   );
 }
