@@ -60,7 +60,6 @@ export default function BSOD({
     const metrics = ctx.measureText(text);
     const textHeight =
       metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
-    console.log(styles.isometric_bg_loop);
 
     ctx.fillText(text, 0, textHeight + metrics.actualBoundingBoxAscent);
     ctx.fillText(text, WIDTH / 2, HEIGHT / 2 + metrics.actualBoundingBoxAscent);
