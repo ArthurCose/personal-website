@@ -43,11 +43,9 @@ export default function HubOsBackgrounds() {
   return (
     <>
       <p>
-        Art for a game that never came to be. I can't remember if I made all of
-        these sprites, but I do remember working on the cowboy. This was a game
-        I was working on for the fun of making a game with a friend, but life
-        got in the way for the both of us. The project was named
-        "BlissfulCowboy".
+        Art for a game that never came to be. This was something I worked on for
+        the fun of making a game with a friend, but life got in the way for the
+        both of us. The project was named "BlissfulCowboy".
       </p>
 
       <br />
