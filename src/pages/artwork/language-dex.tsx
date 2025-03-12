@@ -18,7 +18,8 @@ const pieceList = [
   "/art/language-dex/Cozy.svg",
   "/art/language-dex/Spooky.svg",
   "/art/language-dex/cat-concept.png",
-  "/art/language-dex/icon.png",
+  "/art/language-dex/feature-graphic.png",
+  "/art/language-dex/store-icon.png",
 ];
 
 type PieceProps = {
