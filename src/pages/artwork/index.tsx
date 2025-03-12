@@ -1,4 +1,5 @@
 import styles from "@/styles/Gallery.module.css";
+import { PreviewComponent as LanguageDexPreviewComponent } from "./language-dex";
 import { PreviewComponent as HubOsPreviewComponent } from "./honse-backgrounds";
 import Link from "next/link";
 
@@ -13,6 +14,10 @@ export default function () {
       <br />
 
       <div className={styles.gallery}>
+        <Link href="/artwork/language-dex">
+          <LanguageDexPreviewComponent />
+        </Link>
+
         <Link href="/artwork/honse-backgrounds">
           <HubOsPreviewComponent />
         </Link>

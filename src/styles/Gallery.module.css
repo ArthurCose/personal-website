@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
+  align-items: center;
 }
 
 .item {
@@ -11,6 +12,7 @@
 
 .gallery .item {
   cursor: pointer;
+  max-width: 240px;
 }
 
 .gallery .item:hover {
@@ -63,4 +65,8 @@
   bottom: 16px;
   right: 16px;
   font-size: 32px;
+}
+
+.language_dex_bg {
+  background: #09090b;
 }

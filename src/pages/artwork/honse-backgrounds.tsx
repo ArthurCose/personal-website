@@ -1,4 +1,4 @@
-import { MouseEventHandler, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import animate from "@/lib/hub-os-backgrounds/runtime";
 import Theme from "@/lib/hub-os-backgrounds/themes/Theme";
 import Day from "@/lib/hub-os-backgrounds/themes/Day";
@@ -101,13 +101,7 @@ export default function HubOsBackgrounds() {
 
       <div className={styles.gallery}>
         {pieceList.map((theme, i) => (
-          <Piece
-            key={i}
-            theme={theme}
-            onClick={() => {
-              setIndex(i);
-            }}
-          />
+          <Piece key={i} theme={theme} onClick={() => setIndex(i)} />
         ))}
       </div>
 
