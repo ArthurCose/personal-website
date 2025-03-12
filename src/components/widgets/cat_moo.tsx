@@ -136,7 +136,7 @@ export default function CatMoo(props: Props) {
 
     const canvas = canvasRef.current!;
     canvas.width = props.charWidth * 16;
-    canvas.height = props.charHeight * 6;
+    canvas.height = props.charHeight * 5.5;
 
     const ctx = canvas.getContext("2d")!;
     ctx.font = props.font;
