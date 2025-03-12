@@ -8,6 +8,10 @@ export function PreviewComponent() {
 }
 
 const pieceList = [
+  "/art/language-dex/Results-4.svg",
+  "/art/language-dex/Results-3.svg",
+  "/art/language-dex/Results-2.svg",
+  "/art/language-dex/Results-1.svg",
   "/art/language-dex/Read.svg",
   "/art/language-dex/Read-o.svg",
   "/art/language-dex/Practice.svg",
@@ -49,10 +53,10 @@ export default function () {
   return (
     <>
       <p>
-        Drafts and final custom art for Language Dex. After finding the app was
-        too bland and empty, I decided to figure out how to create SVGs using
-        Krita to create this cat mascot. She is the "Language Cat", a pun on
-        Cat-alog and a possible alternative name for the app.
+        Drafts and final art for Language Dex. After finding the app was too
+        bland and empty, I decided to figure out how to create SVGs using Krita
+        to create this cat mascot. She is the "Language Cat", a pun on Cat-alog
+        and a possible alternative name for the app.
       </p>
 
       <br />
