@@ -13,6 +13,26 @@ type Props = {
   renderItem: (i: number) => React.JSX.Element;
 };
 
+function updateIndex(
+  setIndex: React.Dispatch<React.SetStateAction<number | undefined>>,
+  totalItems: number,
+  dir: number
+) {
+  setIndex((index) => {
+    if (index == undefined) {
+      return index;
+    }
+
+    if (dir < 0) {
+      return index == 0 ? totalItems - 1 : index - 1;
+    } else if (dir > 0) {
+      return (index + 1) % totalItems;
+    } else {
+      return index;
+    }
+  });
+}
+
 export default function GalleryFullscreen({
   index,
   setIndex,
@@ -30,21 +50,13 @@ export default function GalleryFullscreen({
         e.preventDefault();
       }
 
-      setIndex((index) => {
-        if (index == undefined) {
-          return index;
-        }
-
-        if (e.key == "ArrowLeft") {
-          return index == 0 ? totalItems - 1 : index - 1;
-        } else if (e.key == "ArrowRight") {
-          return (index + 1) % totalItems;
-        } else if (e.key == "Escape") {
-          return undefined;
-        } else {
-          return index;
-        }
-      });
+      if (e.key == "ArrowLeft") {
+        updateIndex(setIndex, totalItems, -1);
+      } else if (e.key == "ArrowRight") {
+        updateIndex(setIndex, totalItems, 1);
+      } else if (e.key == "Escape") {
+        setIndex(undefined);
+      }
     };
 
     document.addEventListener("keydown", listener);
@@ -59,7 +71,22 @@ export default function GalleryFullscreen({
   }
 
   return createPortal(
-    <div className={styles.fullscreen} onClick={() => setIndex(undefined)}>
+    <div
+      className={styles.fullscreen}
+      onClick={(e) => {
+        if (index == undefined) {
+          return;
+        }
+
+        if (e.clientX < window.innerWidth * 0.25) {
+          updateIndex(setIndex, totalItems, -1);
+        } else if (e.clientX > window.innerWidth * 0.75) {
+          updateIndex(setIndex, totalItems, 1);
+        } else {
+          setIndex(undefined);
+        }
+      }}
+    >
       <div className={styles.item_container}>{renderItem(index)}</div>
       <div
         className={styles.count}
