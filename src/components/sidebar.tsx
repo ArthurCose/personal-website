@@ -43,7 +43,13 @@ function SidebarOption({
   children,
 }: { enabled?: boolean; onClick: () => void } & React.PropsWithChildren) {
   return (
-    <a href="javascript:void(0)" onClick={onClick}>
+    <a
+      href=""
+      onClick={(e) => {
+        e.preventDefault();
+        onClick();
+      }}
+    >
       {children}
       {enabled != undefined && (
         <span className={classNames(!enabled && styles.hidden)}>{" ✅"}</span>
