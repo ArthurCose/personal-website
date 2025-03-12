@@ -1,6 +1,7 @@
 import styles from "@/styles/Gallery.module.css";
 import { PreviewComponent as LanguageDexPreviewComponent } from "./language-dex";
 import { PreviewComponent as HubOsPreviewComponent } from "./honse-backgrounds";
+import { PreviewComponent as BlissfulCowboyPreviewComponent } from "./blissful-cowboy";
 import Link from "next/link";
 
 export default function () {
@@ -20,6 +21,10 @@ export default function () {
 
         <Link href="/artwork/honse-backgrounds">
           <HubOsPreviewComponent />
+        </Link>
+
+        <Link href="/artwork/blissful-cowboy">
+          <BlissfulCowboyPreviewComponent />
         </Link>
       </div>
     </>

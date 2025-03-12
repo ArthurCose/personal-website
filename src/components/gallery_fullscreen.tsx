@@ -26,7 +26,7 @@ export default function GalleryFullscreen({
     }
 
     const listener = (e: KeyboardEvent) => {
-      if (!e.ctrlKey && !e.shiftKey) {
+      if (!e.ctrlKey && !e.shiftKey && !e.altKey) {
         e.preventDefault();
       }
 

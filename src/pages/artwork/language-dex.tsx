@@ -4,7 +4,7 @@ import GalleryFullscreen from "@/components/gallery_fullscreen";
 import classNames from "classnames";
 
 export function PreviewComponent() {
-  return <Piece svg={"/art/language-dex/Read.svg"} />;
+  return <Piece src={"/art/language-dex/Read.svg"} />;
 }
 
 const pieceList = [
@@ -23,11 +23,11 @@ const pieceList = [
 ];
 
 type PieceProps = {
-  svg: any;
+  src: any;
   onClick?: () => void;
 };
 
-function Piece({ svg, onClick }: PieceProps) {
+function Piece({ src, onClick }: PieceProps) {
   return (
     <div className={styles.item_container}>
       <img
@@ -37,7 +37,7 @@ function Piece({ svg, onClick }: PieceProps) {
           styles.wide_item,
           styles.language_dex_bg
         )}
-        src={svg}
+        src={src}
       />
     </div>
   );
@@ -58,8 +58,8 @@ export default function HubOsBackgrounds() {
       <br />
 
       <div className={styles.gallery}>
-        {pieceList.map((svg, i) => (
-          <Piece key={i} svg={svg} onClick={() => setIndex(i)} />
+        {pieceList.map((src, i) => (
+          <Piece key={i} src={src} onClick={() => setIndex(i)} />
         ))}
       </div>
 
@@ -68,7 +68,7 @@ export default function HubOsBackgrounds() {
         setIndex={setIndex}
         totalItems={pieceList.length}
         renderItem={(i) => (
-          <Piece key={i} svg={pieceList[i]} onClick={() => setIndex(i)} />
+          <Piece key={i} src={pieceList[i]} onClick={() => setIndex(i)} />
         )}
       />
     </>
