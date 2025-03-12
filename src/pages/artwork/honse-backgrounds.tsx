@@ -97,8 +97,6 @@ export default function () {
         copied frames to a second canvas to generate a spritesheet.
       </p>
 
-      <br />
-
       <div className={styles.gallery}>
         {pieceList.map((theme, i) => (
           <Piece key={i} theme={theme} onClick={() => setIndex(i)} />
