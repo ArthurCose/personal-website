@@ -21,10 +21,10 @@ const pieceList = [
   Day,
   MorningBladeRunner,
   Sunset,
-  NightMuted,
-  NightBright,
-  NightBrightRainbow,
   NightBrightRainbowLowRed,
+  NightBrightRainbow,
+  NightBright,
+  NightMuted,
   Plain,
 ];
 
