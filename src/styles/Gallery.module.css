@@ -1,8 +1,18 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 8px;
+}
+
+.gallery a {
+  display: contents;
+}
+
+.item_container {
+  width: calc(33.3% - 8px * 2);
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -12,7 +22,6 @@
 
 .gallery .item {
   cursor: pointer;
-  width: 240px;
 }
 
 .gallery .item:hover {
@@ -28,7 +37,6 @@
 }
 
 .fullscreen .item_container {
-  aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;
