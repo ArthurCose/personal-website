@@ -67,7 +67,7 @@ export default function GalleryFullscreen({
   }, [index]);
 
   if (index == undefined) {
-    return;
+    return null;
   }
 
   return createPortal(
