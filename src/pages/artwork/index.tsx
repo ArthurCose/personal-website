@@ -2,6 +2,7 @@ import styles from "@/styles/Gallery.module.css";
 import { PreviewComponent as LanguageDexPreviewComponent } from "./language-dex";
 import { PreviewComponent as HubOsPreviewComponent } from "./honse-backgrounds";
 import { PreviewComponent as BlissfulCowboyPreviewComponent } from "./blissful-cowboy";
+import { PreviewComponent as ToweringRacePreviewComponent } from "./towering-race";
 import Link from "next/link";
 
 export default function () {
@@ -25,6 +26,10 @@ export default function () {
 
         <Link href="/artwork/blissful-cowboy">
           <BlissfulCowboyPreviewComponent />
+        </Link>
+
+        <Link href="/artwork/towering-race">
+          <ToweringRacePreviewComponent />
         </Link>
       </div>
     </>
