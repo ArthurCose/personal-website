@@ -4,10 +4,12 @@ import GalleryFullscreen from "@/components/gallery_fullscreen";
 import classNames from "classnames";
 
 export function PreviewComponent() {
-  return <Piece src={"/art/language-dex/Read.svg"} />;
+  return <Piece src={"/art/language-dex/icon.svg"} />;
 }
 
 const pieceList = [
+  "/art/language-dex/icon.svg",
+  "/art/language-dex/adaptive-icon.svg",
   "/art/language-dex/Results-4.svg",
   "/art/language-dex/Results-3.svg",
   "/art/language-dex/Results-2.svg",
@@ -24,6 +26,7 @@ const pieceList = [
   "/art/language-dex/cat-concept.png",
   "/art/language-dex/feature-graphic.png",
   "/art/language-dex/store-icon.png",
+  "/art/language-dex/favicon.png",
 ];
 
 type PieceProps = {
@@ -55,8 +58,8 @@ export default function () {
       <p>
         Drafts and final art for Language Dex. After finding the app was too
         bland and empty, I decided to figure out how to create SVGs using Krita
-        to create this cat mascot. She is the "Language Cat", a pun on Cat-alog
-        and a possible alternative name for the app.
+        to create this cat mascot. She is the "Language Cat", a possible
+        alternative name for the app when treated as a pun on Cat-alog.
       </p>
 
       <br />
