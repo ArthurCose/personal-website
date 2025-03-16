@@ -8,6 +8,8 @@ export function PreviewComponent() {
 }
 
 const pieceList = [
+  "/art/language-dex/Statistics-Practice.svg",
+  "/art/language-dex/Statistics-Read.svg",
   "/art/language-dex/icon.svg",
   "/art/language-dex/adaptive-icon.svg",
   "/art/language-dex/Results-4.svg",
