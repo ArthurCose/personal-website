@@ -126,8 +126,8 @@ function drawFrame(
 
 export default function CatMoo(props: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const ctxRef = useRef<CanvasRenderingContext2D>();
-  const queueRef = useRef<AnimationQueue>();
+  const ctxRef = useRef<CanvasRenderingContext2D>(undefined);
+  const queueRef = useRef<AnimationQueue>(undefined);
   const [pressCount, setPressCount] = useState(0);
 
   useEffect(() => {

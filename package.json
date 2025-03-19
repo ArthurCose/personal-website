@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "npm run licenses && next build",
     "start": "next start",
     "lint": "next lint",
@@ -11,16 +11,23 @@
   },
   "dependencies": {
     "classnames": "2.5",
-    "next": "14.2",
+    "next": "15.2.3",
     "next-navigation-guard": "^0.1.2",
-    "react": "18",
-    "react-dom": "18"
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
     "@types/node": "22",
-    "@types/react": "18",
-    "@types/react-dom": "18",
+    "@types/react": "19.0.11",
+    "@types/react-dom": "19.0.4",
     "license-ripper": "0.8",
     "typescript": "5"
+  },
+  "overrides": {
+    "@types/react": "19.0.11",
+    "@types/react-dom": "19.0.4",
+    "next-navigation-guard": {
+      "react": "19"
+    }
   }
 }
