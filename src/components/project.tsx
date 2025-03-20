@@ -9,7 +9,7 @@ type ProjectProps = {
   iconHeight?: number;
   repo?: string;
   links?: {
-    icon: "firefox" | "chromium" | "invite_to_discord" | "video" | "generic";
+    icon?: "firefox" | "chromium" | "invite_to_discord" | "video" | "generic";
     href: string;
   }[];
   children?: ReactNode;
@@ -42,7 +42,7 @@ export default function Project(props: ProjectProps) {
       case "video":
         child = "📺";
         break;
-      case "generic":
+      default:
         child = "🔗";
         break;
     }

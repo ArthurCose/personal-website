@@ -1,14 +1,15 @@
 import Link from "next/link";
 import Project from "@/components/project";
 
-import minicraftDsImage from "../../public/project-icons/minicraft-ds.png";
-import joshDevelopImage from "../../public/project-icons/josh-develop.png";
-import hexagonPuzzleImage from "../../public/project-icons/re4-hexagon-puzzle.png";
-import bnWordleImage from "../../public/project-icons/bn-wordle.png";
-import licenseRipperImage from "../../public/project-icons/license-ripper.png";
-import youtubeControlFixImage from "../../public/project-icons/youtube-control-fix.png";
-import watermarkRemoverImage from "../../public/project-icons/watermark-remover-bot.png";
-import arthurcoseImage from "../../public/project-icons/arthurcose.png";
+import minicraftDsImage from "@/../public/project-icons/minicraft-ds.png";
+import joshDevelopImage from "@/../public/project-icons/josh-develop.png";
+import hexagonPuzzleImage from "@/../public/project-icons/re4-hexagon-puzzle.png";
+import bnWordleImage from "@/../public/project-icons/bn-wordle.png";
+import licenseRipperImage from "@/../public/project-icons/license-ripper.png";
+import youtubeControlFixImage from "@/../public/project-icons/youtube-control-fix.png";
+import watermarkRemoverImage from "@/../public/project-icons/watermark-remover-bot.png";
+import arthurcoseImage from "@/../public/project-icons/arthurcose.png";
+import languageDexImage from "@/../public/project-icons/language-dex.png";
 
 export default function Projects() {
   return (
@@ -19,6 +20,27 @@ export default function Projects() {
       <p>Some of my publicly available projects.</p>
 
       <br />
+
+      <Project
+        name="Language Dex"
+        icon={languageDexImage}
+        links={[
+          {
+            href: "https://play.google.com/store/apps/details?id=dev.arthurcose.languagedex",
+          },
+        ]}
+      >
+        <p>
+          A personal dictionary app that allows you to document words you know
+          or want to know, with practice mini-games to help with retaining
+          words.
+        </p>
+        <br />
+        <p>
+          The idea behind it was to make learning new words feel close to
+          catching new Pokémon.
+        </p>
+      </Project>
 
       <Project
         name="YouTube Control Fix"
@@ -53,12 +75,7 @@ export default function Projects() {
         name="License Ripper"
         icon={licenseRipperImage}
         repo="https://github.com/ArthurCose/License-Ripper/"
-        links={[
-          {
-            icon: "generic",
-            href: "https://www.npmjs.com/package/license-ripper",
-          },
-        ]}
+        links={[{ href: "https://www.npmjs.com/package/license-ripper" }]}
       >
         A tool to find license and project info in npm dependencies, generates a
         JSON file for further processing into a web page. Used to generate the{" "}
@@ -69,12 +86,7 @@ export default function Projects() {
         name="RE4 Hexagon Puzzle"
         icon={hexagonPuzzleImage}
         repo="https://github.com/ArthurCose/RE4-Hexagon-Puzzle/"
-        links={[
-          {
-            icon: "generic",
-            href: "https://arthurcose.github.io/RE4-Hexagon-Puzzle/",
-          },
-        ]}
+        links={[{ href: "https://arthurcose.github.io/RE4-Hexagon-Puzzle/" }]}
       >
         <Link href="https://www.residentevil.com/re4/en-us/">
           Resident Evil 4
@@ -90,12 +102,7 @@ export default function Projects() {
         name="BN Wordle"
         icon={bnWordleImage}
         repo="https://github.com/ArthurCose/BN-Wordle/"
-        links={[
-          {
-            icon: "generic",
-            href: "https://arthurcose.github.io/BN-Wordle/",
-          },
-        ]}
+        links={[{ href: "https://arthurcose.github.io/BN-Wordle/" }]}
       >
         A puzzle game inspired by{" "}
         <Link href="https://www.nytimes.com/games/wordle/index.html">
