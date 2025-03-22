@@ -43,8 +43,17 @@ export default function BSOD({
   reduceAnimations: boolean;
 }) {
   const [style, setStyle] = useState<CSSProperties | undefined>(undefined);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    document.fonts.ready.then(() => setReady(true));
+  }, []);
+
+  useEffect(() => {
+    if (!ready) {
+      return;
+    }
+
     if (reduceAnimations) {
       setStyle(undefined);
       return;
@@ -77,7 +86,7 @@ export default function BSOD({
     return () => {
       stylePromise.then((styleElement) => styleElement.remove());
     };
-  }, [reduceAnimations]);
+  }, [ready, reduceAnimations]);
 
   return (
     <div className={classNames("bsod", styles.full_fixed)} style={style}>
