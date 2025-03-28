@@ -4,7 +4,7 @@ export default function About() {
       <h2>Hi, I'm Arthur</h2>
 
       <p>
-        I am a Software Engineer with professional experience in C++,
+        I am a Software Developer with professional experience in C++,
         TypeScript, React-based frameworks, and MongoDB. I also frequently use
         Rust, Lua, SQL, and have minor experience with PHP and Python.
       </p>
