@@ -2,12 +2,19 @@ import type { AppProps } from "next/app";
 import { useState } from "react";
 import Head from "next/head";
 import { NavigationGuardProvider } from "next-navigation-guard";
+import { AnimatePresence, motion } from "motion/react";
 import Sidebar from "@/components/sidebar";
 import TopBar from "@/components/topbar";
 import BSOD from "@/components/designs/bsod";
 import "@/styles/globals.css";
 
-export default function App({ Component, pageProps }: AppProps) {
+const pageTransitions = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0, position: "absolute" },
+};
+
+export default function App({ Component, pageProps, router }: AppProps) {
   const [open, setOpen] = useState(false);
   const [reduceAnimations, setReduceAnimations] = useState(false);
 
@@ -31,7 +38,14 @@ export default function App({ Component, pageProps }: AppProps) {
         />
 
         <div id="main-content" onClick={() => setOpen(false)}>
-          <Component {...pageProps} />
+          <AnimatePresence>
+            <motion.div
+              key={router.pathname}
+              {...(reduceAnimations ? undefined : pageTransitions)}
+            >
+              <Component {...pageProps} />
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
 

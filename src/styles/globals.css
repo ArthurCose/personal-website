@@ -99,9 +99,14 @@ body,
 }
 
 #main-content {
-  padding: 16px 8px;
   flex: 1;
   overflow-x: auto;
+}
+
+/* apply padding to transition container */
+/* avoids size changes when the position is set to absolute */
+#main-content > * {
+  padding: 16px 8px;
 }
 
 #hamburger {
