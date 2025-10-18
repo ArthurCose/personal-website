@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { MouseEventHandler, useEffect, useRef, useState } from "react";
 import animate from "@/lib/hub-os-backgrounds/runtime";
 import Theme from "@/lib/hub-os-backgrounds/themes/Theme";
 import Day from "@/lib/hub-os-backgrounds/themes/Day";
@@ -10,11 +10,15 @@ import NightMuted from "@/lib/hub-os-backgrounds/themes/NightMuted";
 import Plain from "@/lib/hub-os-backgrounds/themes/Plain";
 import Sunset from "@/lib/hub-os-backgrounds/themes/Sunset";
 import styles from "@/styles/Gallery.module.css";
-import GalleryFullscreen from "@/components/gallery_fullscreen";
+import Gallery from "@/components/gallery";
 import classNames from "classnames";
 
 export function PreviewComponent() {
-  return <Piece animateAlways theme={Day} />;
+  return (
+    <div className={styles.item_container}>
+      <Piece animateAlways theme={Day} />
+    </div>
+  );
 }
 
 const pieceList = [
@@ -31,7 +35,7 @@ const pieceList = [
 type PieceProps<T> = {
   animateAlways?: boolean;
   theme: T;
-  onClick?: () => void;
+  onClick?: MouseEventHandler;
 };
 
 function Piece<T extends new () => Theme>({
@@ -66,23 +70,19 @@ function Piece<T extends new () => Theme>({
   }, [animating]);
 
   return (
-    <div className={styles.item_container}>
-      <canvas
-        onClick={onClick}
-        className={classNames(styles.item, styles.wide_item)}
-        onMouseOver={() => setAnimating(animateAlways || true)}
-        onMouseOut={() => setAnimating(animateAlways || false)}
-        ref={ref}
-        width={240}
-        height={160}
-      />
-    </div>
+    <canvas
+      onClick={onClick}
+      className={classNames(styles.item, styles.wide_item)}
+      onMouseOver={() => setAnimating(animateAlways || true)}
+      onMouseOut={() => setAnimating(animateAlways || false)}
+      ref={ref}
+      width={240}
+      height={160}
+    />
   );
 }
 
 export default function () {
-  const [index, setIndex] = useState<number | undefined>(undefined);
-
   return (
     <>
       <p>
@@ -97,23 +97,15 @@ export default function () {
         copied frames to a second canvas to generate a spritesheet.
       </p>
 
-      <div className={styles.gallery}>
-        {pieceList.map((theme, i) => (
-          <Piece key={i} theme={theme} onClick={() => setIndex(i)} />
-        ))}
-      </div>
-
-      <GalleryFullscreen
-        index={index}
-        setIndex={setIndex}
+      <Gallery
         totalItems={pieceList.length}
-        renderItem={(i) => (
-          <Piece
-            key={i}
-            animateAlways
-            theme={pieceList[i]}
-            onClick={() => setIndex(i)}
-          />
+        renderListItem={(i, onClick) => (
+          <div className={styles.item_container} key={i}>
+            <Piece theme={pieceList[i]} onClick={onClick} />
+          </div>
+        )}
+        renderFullscreenItem={(i) => (
+          <Piece key={i} animateAlways theme={pieceList[i]} />
         )}
       />
     </>

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { MouseEventHandler } from "react";
 import styles from "@/styles/Gallery.module.css";
-import GalleryFullscreen from "@/components/gallery_fullscreen";
+import Gallery from "@/components/gallery";
 import classNames from "classnames";
 
 export function PreviewComponent() {
@@ -18,7 +18,7 @@ const pieceList = [
 type PieceProps = {
   src: any;
   wide?: boolean;
-  onClick?: () => void;
+  onClick?: MouseEventHandler;
 };
 
 function Piece({ src, wide, onClick }: PieceProps) {
@@ -38,8 +38,6 @@ function Piece({ src, wide, onClick }: PieceProps) {
 }
 
 export default function () {
-  const [index, setIndex] = useState<number | undefined>(undefined);
-
   return (
     <>
       <p>
@@ -50,19 +48,12 @@ export default function () {
 
       <br />
 
-      <div className={styles.gallery}>
-        {pieceList.map((data, i) => (
-          <Piece key={i} {...data} onClick={() => setIndex(i)} />
-        ))}
-      </div>
-
-      <GalleryFullscreen
-        index={index}
-        setIndex={setIndex}
+      <Gallery
         totalItems={pieceList.length}
-        renderItem={(i) => (
-          <Piece key={i} {...pieceList[i]} onClick={() => setIndex(i)} />
+        renderListItem={(i, onClick) => (
+          <Piece key={i} {...pieceList[i]} onClick={onClick} />
         )}
+        renderFullscreenItem={(i) => <Piece key={i} {...pieceList[i]} />}
       />
     </>
   );
