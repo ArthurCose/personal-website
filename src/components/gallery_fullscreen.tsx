@@ -87,8 +87,12 @@ export default function GalleryFullscreen({
 
     document.addEventListener("keydown", listener);
 
+    // block scrolling
+    document.body.style.overflow = "hidden";
+
     return () => {
       document.removeEventListener("keydown", listener);
+      document.body.style.overflow = "";
     };
   }, [index]);
 
