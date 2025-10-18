@@ -71,7 +71,11 @@ function SidebarLink({ href, name, onClick }: SidebarLinkProps) {
     <Link
       href={href}
       onClick={onClick}
-      className={router.asPath == href ? "local-link" : undefined}
+      className={
+        router.asPath == href || router.asPath.startsWith(href + "/")
+          ? "local-link"
+          : undefined
+      }
     >
       {name}
     </Link>
