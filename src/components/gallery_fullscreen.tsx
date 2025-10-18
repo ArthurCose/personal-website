@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Press_Start_2P } from "next/font/google";
 import { useNavigationGuard } from "next-navigation-guard";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, TargetAndTransition } from "motion/react";
 
 const font = Press_Start_2P({ weight: "400", subsets: ["latin"] });
 
@@ -43,7 +43,11 @@ export default function GalleryFullscreen({
   renderItem,
 }: Props) {
   const guard = useNavigationGuard({ enabled: index != undefined });
-  const [prevInitialBounds, setPrevInitialBounds] = useState(initialBounds);
+  const [justOpened, setJustOpened] = useState(false);
+  const [itemInitialStyle, setItemInitialStyle] = useState<
+    TargetAndTransition | undefined
+  >(undefined);
+  const [prevIndex, setPrevIndex] = useState(index);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -57,12 +61,49 @@ export default function GalleryFullscreen({
     setIndex(undefined);
   }, [guard.active]);
 
+  // resolve open
   useEffect(() => {
-    setPrevInitialBounds(initialBounds);
-  }, [initialBounds]);
+    setJustOpened(prevIndex == undefined);
+
+    if (initialBounds) {
+      setItemInitialStyle({
+        position: "absolute",
+        top: initialBounds.y,
+        left: initialBounds.x,
+        width: initialBounds.width + "px",
+        height: initialBounds.height + "px",
+      });
+    }
+  }, [prevIndex, initialBounds]);
+
+  // resolve initial style for transitioning items
+  useEffect(() => {
+    if (prevIndex == undefined || index == undefined) {
+      return;
+    }
+
+    let itemInitialStyle: TargetAndTransition = {};
+
+    itemInitialStyle = {
+      zIndex: 1,
+      opacity: 0,
+    };
+
+    if (prevIndex < index) {
+      itemInitialStyle.left = "100vw";
+      itemInitialStyle.transform = "translateX(0%)";
+    } else {
+      itemInitialStyle.left = 0;
+      itemInitialStyle.transform = "translateX(-100%)";
+    }
+
+    setItemInitialStyle(itemInitialStyle);
+  }, [prevIndex, index]);
 
   // handle keyboard
   useEffect(() => {
+    setPrevIndex(index);
+
     if (index == undefined) {
       return index;
     }
@@ -100,12 +141,26 @@ export default function GalleryFullscreen({
     return null;
   }
 
-  if (index == undefined) {
+  // we linger on the prevIndex to apply exit transitions
+  const visibleIndex = prevIndex;
+
+  if (visibleIndex == undefined) {
     return createPortal(<AnimatePresence />, document.body);
   }
 
-  const initialBoundsJustSet =
-    prevInitialBounds != initialBounds && initialBounds != null;
+  const initialBoundsJustSet = initialBounds && justOpened;
+
+  // handle exit transition
+  let itemExitStyle: TargetAndTransition | undefined;
+
+  if (index != undefined && index != prevIndex) {
+    itemExitStyle = {
+      left: visibleIndex < index ? 0 : "100vw",
+      transform: "translateX(-50%)",
+      zIndex: 1,
+      opacity: 0,
+    };
+  }
 
   return createPortal(
     <AnimatePresence>
@@ -129,30 +184,37 @@ export default function GalleryFullscreen({
           }
         }}
       >
-        <motion.div
-          layout
-          transition={{ ease: "easeOut", duration: 0.3 }}
-          style={
-            initialBoundsJustSet
-              ? {
-                  position: "absolute",
-                  top: initialBounds.y,
-                  left: initialBounds.x,
-                  width: initialBounds.width + "px",
-                  height: initialBounds.height + "px",
-                }
-              : undefined
-          }
-          className={!initialBoundsJustSet ? styles.item_container : undefined}
-        >
-          {renderItem(index)}
-        </motion.div>
+        <AnimatePresence>
+          <motion.div
+            key={visibleIndex}
+            layout
+            transition={{ ease: "easeOut", duration: 0.3 }}
+            initial={itemInitialStyle}
+            animate={{
+              opacity: 1,
+              transform: "translateX(0%)",
+              left: "",
+              top: "",
+              width: "",
+              height: "",
+            }}
+            exit={itemExitStyle}
+            style={{
+              position: "absolute",
+            }}
+            className={
+              !initialBoundsJustSet ? styles.item_container : undefined
+            }
+          >
+            {renderItem(visibleIndex)}
+          </motion.div>
+        </AnimatePresence>
 
         <div
           className={styles.count}
           style={{ fontFamily: font.style.fontFamily }}
         >
-          {index + 1}/{totalItems}
+          {visibleIndex + 1}/{totalItems}
         </div>
       </motion.div>
     </AnimatePresence>,
