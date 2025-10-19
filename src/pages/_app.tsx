@@ -8,6 +8,11 @@ import TopBar from "@/components/topbar";
 import BSOD from "@/components/designs/bsod";
 import "@/styles/globals.css";
 
+// temp fix for https://github.com/vercel/next.js/issues/49279
+import "@/styles/Project.module.css";
+import "@/styles/Gallery.module.css";
+import "@/styles/Licenses.module.css";
+
 const pageTransitions = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
