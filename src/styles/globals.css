@@ -51,6 +51,7 @@ body {
 body {
   color: var(--text-color);
   background: var(--background);
+  overflow-y: scroll;
 }
 
 #app-container {
