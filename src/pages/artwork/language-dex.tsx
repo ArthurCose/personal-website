@@ -56,9 +56,9 @@ export default function () {
   return (
     <>
       <p>
-        Drafts and final art for Language Dex. After finding the app was too
-        bland and empty, I decided to figure out how to create SVGs using Krita
-        to create this cat mascot. She is the "Language Cat", a possible
+        Final art and drafts for Language Dex. After finding the app was too
+        bland and empty, I decided to learn how to create SVGs in Krita to
+        create this mascot. She is the "Language Cat", which can also be an
         alternative name for the app when treated as a pun on Cat-alog.
       </p>
 
