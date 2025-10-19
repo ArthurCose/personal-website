@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <>
-      <h2>Hi, I'm Arthur</h2>
+      <h1>Hi, I'm Arthur</h1>
 
       <p>
         I am a Software Developer with professional experience in C++,

@@ -12,6 +12,7 @@ import Sunset from "@/lib/hub-os-backgrounds/themes/Sunset";
 import styles from "@/styles/Gallery.module.css";
 import Gallery from "@/components/gallery";
 import classNames from "classnames";
+import Link from "next/link";
 
 export function PreviewComponent() {
   return (
@@ -86,8 +87,8 @@ export default function () {
   return (
     <>
       <p>
-        Procedurally generated backgrounds for a game constrained to 240x160
-        pixels.
+        Procedurally generated backgrounds for{" "}
+        <Link href="https://hub-os.itch.io/hub-os">Hub OS</Link>.
       </p>
 
       <br />

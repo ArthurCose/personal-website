@@ -1,7 +1,7 @@
 export default function () {
   return (
     <>
-      <h2>404</h2>
+      <h1>404</h1>
 
       <p>Page not found.</p>
     </>

@@ -10,16 +10,18 @@ import youtubeControlFixImage from "@/../public/project-icons/youtube-control-fi
 import watermarkRemoverImage from "@/../public/project-icons/watermark-remover-bot.png";
 import arthurcoseImage from "@/../public/project-icons/arthurcose.png";
 import languageDexImage from "@/../public/project-icons/language-dex.png";
+import rollbackMlua from "@/../public/project-icons/rollback-mlua.png";
+import redMoon from "@/../public/project-icons/red-moon.png";
+import hubOS from "@/../public/project-icons/hub-os.png";
 
 export default function Projects() {
   return (
     <>
-      {/* <h2>Contributions</h2> */}
-
-      <h2>Personal Projects</h2>
+      <h1>Personal Projects</h1>
       <p>Some of my publicly available projects.</p>
 
       <br />
+      <h2>Tools</h2>
 
       <Project
         name="Language Dex"
@@ -61,6 +63,26 @@ export default function Projects() {
         the arrow keys consistent.
       </Project>
 
+      <br />
+      <h2>Games</h2>
+
+      <Project
+        name="Hub OS"
+        icon={hubOS}
+        repo="https://github.com/Hub-OS/Hub-OS/"
+        links={[{ href: "https://hub-os.itch.io/hub-os" }]}
+      >
+        A rewrite of{" "}
+        <Link href="https://github.com/TheMaverickProgrammer/OpenNetBattle">
+          OpenNetBattle
+        </Link>{" "}
+        (A moddable Mega Man Battle Network fan game) with many improvements.
+        <br />
+        <br />
+        Highlights: rollback netcode, support for more than two players in
+        battle, cross platform, built-in mod manager.
+      </Project>
+
       <Project
         name="Minicraft DS Edition"
         icon={minicraftDsImage}
@@ -69,17 +91,6 @@ export default function Projects() {
         A homebrew port of{" "}
         <Link href="https://en.wikipedia.org/wiki/Minicraft">Minicraft</Link> to
         the Nintendo DS.
-      </Project>
-
-      <Project
-        name="License Ripper"
-        icon={licenseRipperImage}
-        repo="https://github.com/ArthurCose/License-Ripper/"
-        links={[{ href: "https://www.npmjs.com/package/license-ripper" }]}
-      >
-        A tool to find license and project info in npm dependencies, generates a
-        JSON file for further processing into a web page. Used to generate the{" "}
-        <Link href="/licenses">attribution</Link> page.
       </Project>
 
       <Project
@@ -119,6 +130,38 @@ export default function Projects() {
         for a new word
       </Project>
 
+      <br />
+      <h2>Libraries</h2>
+
+      <Project
+        name="License Ripper"
+        icon={licenseRipperImage}
+        repo="https://github.com/ArthurCose/License-Ripper/"
+        links={[{ href: "https://www.npmjs.com/package/license-ripper" }]}
+      >
+        A tool to find license and project info in npm dependencies, generates a
+        JSON file for further processing into a web page. Used to generate the{" "}
+        <Link href="/licenses">attribution</Link> page.
+      </Project>
+
+      <Project
+        name="Rollback mlua"
+        icon={rollbackMlua}
+        repo="https://github.com/Hub-OS/rollback-mlua"
+      >
+        A fork of <Link href="https://github.com/mlua-rs/mlua">mlua</Link>. Adds
+        the ability to snapshot and rollback the Lua VM, only tested with Lua
+        5.4 and rarely updated to avoid introducing new bugs.
+        <br />
+        <br />
+        Used in <Link href="https://hub-os.itch.io/hub-os">Hub OS</Link> for
+        implementing rollback netcode for mods, without modders needing to think
+        about rollback or netcode.
+      </Project>
+
+      <br />
+      <h2>Unmaintained or Shelved</h2>
+
       <Project
         name="Watermark Remover Bot"
         icon={watermarkRemoverImage}
@@ -137,6 +180,26 @@ export default function Projects() {
       </Project>
 
       <Project
+        name="Red Moon Lua VM"
+        icon={redMoon}
+        repo="https://github.com/ArthurCose/Red-Moon"
+      >
+        This is similar to{" "}
+        <Link href="https://github.com/Hub-OS/rollback-mlua">
+          Rollback mlua
+        </Link>
+        , with the main feature difference being serialization for sharing VM
+        state to another person over the network. This allows players to jump
+        into an ongoing session with no effort from the modding side.
+        <br />
+        <br />
+        Shelved as the effort of integrating into{" "}
+        <Link href="https://hub-os.itch.io/hub-os">Hub OS</Link> is too high to
+        currently justify, but I occasionally revisit this project to try
+        improving upon it.
+      </Project>
+
+      <Project
         name="JoshDevelop"
         icon={joshDevelopImage}
         repo="https://github.com/ArthurCose/JoshDevelop/"
@@ -148,9 +211,11 @@ export default function Projects() {
         ]}
       >
         A collaborative development environment I built to create games from
-        scratch with friends. Josh is a nickname for a bunny an old friend of
-        mine had.
+        scratch with friends. Josh is a nickname for an old friend's bunny.
       </Project>
+
+      <br />
+      <h2>Self Referential</h2>
 
       <Project
         name="arthurcose.dev"

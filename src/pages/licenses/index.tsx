@@ -4,7 +4,7 @@ import AttributionListItem from "@/components/attribution_list_item";
 export default function Licenses() {
   return (
     <>
-      <h2>Attribution</h2>
+      <h1>Attribution</h1>
       <p>This website is powered by open source software:</p>
 
       <br />
