@@ -1,5 +1,4 @@
 import { MouseEventHandler, useEffect, useRef, useState } from "react";
-import animate from "@/lib/hub-os-backgrounds/runtime";
 import Theme from "@/lib/hub-os-backgrounds/themes/Theme";
 import Day from "@/lib/hub-os-backgrounds/themes/Day";
 import MorningBladeRunner from "@/lib/hub-os-backgrounds/themes/MorningBladeRunner";
@@ -46,6 +45,7 @@ function Piece<T extends new () => Theme>({
 }: PieceProps<T>) {
   const ref = useRef<HTMLCanvasElement>(null);
   const [animating, setAnimating] = useState(animateAlways);
+  const [resumeFrameNumber, setResumeFrameNumber] = useState(0);
 
   useEffect(() => {
     const canvas = ref.current!;
@@ -62,11 +62,23 @@ function Piece<T extends new () => Theme>({
     }
 
     const canvas = ref.current!;
+    const ctx = canvas.getContext("2d")!;
+
     const theme = new Theme();
-    const interval = animate(canvas, theme);
+    let frameNumber = resumeFrameNumber;
+
+    if (theme.prepare) {
+      theme.prepare(canvas, ctx);
+    }
+
+    const interval = setInterval(() => {
+      theme.draw(canvas, ctx, frameNumber);
+      frameNumber += 1;
+    }, theme.FRAME_DURATION * (1000 / 60));
 
     return () => {
       clearInterval(interval);
+      setResumeFrameNumber(frameNumber);
     };
   }, [animating]);
 
@@ -88,7 +100,8 @@ export default function () {
     <>
       <p>
         Procedurally generated backgrounds for{" "}
-        <Link href="https://hub-os.itch.io/hub-os">Hub OS</Link>.
+        <Link href="https://hub-os.itch.io/hub-os">Hub OS</Link>, hover to
+        preview.
       </p>
 
       <br />
