@@ -3,6 +3,9 @@ export default function About() {
     <>
       <h1>Hi, I'm Arthur</h1>
 
+      <p>Welcome to my website.</p>
+      <br />
+
       <p>
         I am a Software Developer with professional experience in C++,
         TypeScript, React-based frameworks, and MongoDB. I also frequently use
@@ -12,8 +15,8 @@ export default function About() {
 
       <p>
         In my free time, I work on a few projects for various online
-        communities, but I've excluded links to these projects to separate my
-        personal and online lives.
+        communities. I strive to become better at contributing to open source
+        projects.
       </p>
     </>
   );
