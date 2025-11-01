@@ -26,6 +26,7 @@ export default function Projects() {
       <Project
         name="Language Dex"
         icon={languageDexImage}
+        repo="https://github.com/ArthurCose/Language-Dex"
         links={[
           {
             href: "https://play.google.com/store/apps/details?id=dev.arthurcose.languagedex",
