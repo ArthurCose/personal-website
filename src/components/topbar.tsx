@@ -30,15 +30,21 @@ export default function TopBar({ sidebarOpen, setSidebarOpen }: Props) {
 
       <div className={styles.externalLinks}>
         <Link
-          title="GitHub"
-          className={styles.github}
-          href="https://github.com/ArthurCose"
+          title="Discord"
+          className={styles.discord}
+          href="https://discord.com/users/252196240144597002"
         />
 
         <Link
           title="LinkedIn"
           className={styles.linkedIn}
           href="https://www.linkedin.com/in/arthurcose/"
+        />
+
+        <Link
+          title="GitHub"
+          className={styles.github}
+          href="https://github.com/ArthurCose"
         />
       </div>
     </div>

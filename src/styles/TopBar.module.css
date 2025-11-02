@@ -33,6 +33,10 @@
   background: center / contain no-repeat url("/trademarks/github-white.svg");
 }
 
+.discord {
+  background: center / contain no-repeat url("/trademarks/discord-color.svg");
+}
+
 .email {
   background: center / contain no-repeat url("/email.svg");
   filter: invert();
