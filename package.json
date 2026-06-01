@@ -6,27 +6,27 @@
     "dev": "next dev --turbopack",
     "build": "npm run licenses && next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "licenses": "license-ripper -o src/_licenses.json --config license-ripper.json --compress"
   },
   "dependencies": {
     "classnames": "2.5",
     "motion": "^12.23.24",
-    "next": "15.2.3",
+    "next": "16.2.7",
     "next-navigation-guard": "^0.1.2",
-    "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
   },
   "devDependencies": {
     "@types/node": "22",
-    "@types/react": "19.0.11",
-    "@types/react-dom": "19.0.4",
+    "@types/react": "19.2.16",
+    "@types/react-dom": "19.2.3",
     "license-ripper": "0.8",
     "typescript": "5"
   },
   "overrides": {
-    "@types/react": "19.0.11",
-    "@types/react-dom": "19.0.4",
+    "@types/react": "19.2.16",
+    "@types/react-dom": "19.2.3",
     "next-navigation-guard": {
       "react": "19"
     }
