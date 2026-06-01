@@ -188,9 +188,14 @@ export default function GalleryFullscreen({
             return;
           }
 
-          if (e.clientX < window.innerWidth * 0.25) {
+          // android recommends buttons to be at least 48dp
+          // 1 android dp = 1 / 160 of an inch
+          // 1 web px = 1 / 96 of an inch
+          const buttonSize = 48 * (96 / 160) * 3;
+
+          if (e.clientX < buttonSize) {
             updateIndex(setIndex, totalItems, -1);
-          } else if (e.clientX > window.innerWidth * 0.75) {
+          } else if (e.clientX > window.innerWidth - buttonSize) {
             updateIndex(setIndex, totalItems, 1);
           } else {
             setIndex(undefined);
