@@ -21,7 +21,7 @@ function generateCss(url: string) {
   background-size: ${WIDTH * SCALE}px ${HEIGHT * SCALE}px;
   image-rendering: pixelated;
   animation-name: bsod;
-  animation-duration: 5s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
