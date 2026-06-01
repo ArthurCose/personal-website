@@ -9,10 +9,8 @@ import Link from "next/link";
 export default function () {
   return (
     <>
-      <p>
-        An archive for miscellaneous art I've made for various projects or
-        personal purposes.
-      </p>
+      <h1>Artwork</h1>
+      <p>Archive of miscellaneous art I've made for personal projects.</p>
 
       <br />
 

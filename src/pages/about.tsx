@@ -1,9 +1,11 @@
 export default function About() {
   return (
     <>
-      <h1>Hi, I'm Arthur</h1>
+      <h1>Welcome</h1>
 
-      <p>Welcome to my website.</p>
+      <p>
+        This is a bit of a portfolio and an archive for projects I hold dear.
+      </p>
       <br />
 
       <p>
@@ -14,7 +16,7 @@ export default function About() {
       <br />
 
       <p>
-        In my free time, I work on a few projects for various online
+        In my spare time, I work on a few projects for various online
         communities. I strive to become better at contributing to open source
         projects.
       </p>
