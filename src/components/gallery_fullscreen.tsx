@@ -2,7 +2,7 @@ import styles from "@/styles/Gallery.module.css";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Press_Start_2P } from "next/font/google";
-import { useNavigationGuard } from "next-navigation-guard";
+import router from "next/router";
 import { AnimatePresence, motion, TargetAndTransition } from "motion/react";
 
 const font = Press_Start_2P({ weight: "400", subsets: ["latin"] });
@@ -18,7 +18,7 @@ type Props = {
 function updateIndex(
   setIndex: React.Dispatch<React.SetStateAction<number | undefined>>,
   totalItems: number,
-  dir: number
+  dir: number,
 ) {
   setIndex((index) => {
     if (index == undefined) {
@@ -35,6 +35,25 @@ function updateIndex(
   });
 }
 
+function useNavigationGuard(enabled: boolean, callback: () => void) {
+  useEffect(() => {
+    if (!enabled) {
+      return;
+    }
+
+    router.beforePopState(() => {
+      const currentPath = router.asPath;
+      window.history.pushState(null, "", currentPath);
+      callback();
+      return false;
+    });
+
+    () => {
+      router.beforePopState(() => true);
+    };
+  }, [enabled, callback]);
+}
+
 export default function GalleryFullscreen({
   initialBounds,
   index,
@@ -42,7 +61,6 @@ export default function GalleryFullscreen({
   totalItems,
   renderItem,
 }: Props) {
-  const guard = useNavigationGuard({ enabled: index != undefined });
   const [justOpened, setJustOpened] = useState(false);
   const [itemInitialStyle, setItemInitialStyle] = useState<
     TargetAndTransition | undefined
@@ -50,16 +68,11 @@ export default function GalleryFullscreen({
   const [prevIndex, setPrevIndex] = useState(index);
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), []);
-
-  useEffect(() => {
-    if (!guard.active) {
-      return;
-    }
-
-    guard.reject();
+  useNavigationGuard(index != undefined, () => {
     setIndex(undefined);
-  }, [guard.active]);
+  });
+
+  useEffect(() => setMounted(true), []);
 
   // resolve open
   useEffect(() => {
@@ -218,6 +231,6 @@ export default function GalleryFullscreen({
         </div>
       </motion.div>
     </AnimatePresence>,
-    document.body
+    document.body,
   );
 }

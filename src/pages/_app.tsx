@@ -1,7 +1,6 @@
 import type { AppProps } from "next/app";
 import { useState } from "react";
 import Head from "next/head";
-import { NavigationGuardProvider } from "next-navigation-guard";
 import { AnimatePresence, motion } from "motion/react";
 import Sidebar from "@/components/sidebar";
 import TopBar from "@/components/topbar";
@@ -24,7 +23,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   const [reduceAnimations, setReduceAnimations] = useState(false);
 
   return (
-    <NavigationGuardProvider>
+    <>
       <Head>
         <title>ArthurCose</title>
         <meta name="description" content="" />
@@ -55,6 +54,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
       </div>
 
       <BSOD reduceAnimations={reduceAnimations} />
-    </NavigationGuardProvider>
+    </>
   );
 }
