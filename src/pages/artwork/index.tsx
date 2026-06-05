@@ -17,6 +17,13 @@ export default function () {
 
       <br />
 
+      <p>
+        While I don't really consider myself an artist, my projects still
+        require art. I'm hoping to use these galleries to track my progression.
+      </p>
+
+      <br />
+
       <div className={styles.gallery}>
         <Link href="/artwork/language-dex">
           <LanguageDexPreviewComponent />
