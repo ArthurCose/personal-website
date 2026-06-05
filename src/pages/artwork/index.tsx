@@ -1,6 +1,7 @@
 import styles from "@/styles/Gallery.module.css";
 import { PreviewComponent as LanguageDexPreviewComponent } from "./language-dex";
 import { PreviewComponent as HubOsPreviewComponent } from "./honse-backgrounds";
+import { PreviewComponent as HubOsBattleBgPreviewComponent } from "./honse-battle-backgrounds";
 import { PreviewComponent as HubOsEmotesPreviewComponent } from "./honse-emotes-and-icons";
 import { PreviewComponent as BlissfulCowboyPreviewComponent } from "./blissful-cowboy";
 import { PreviewComponent as ToweringRacePreviewComponent } from "./towering-race";
@@ -22,6 +23,10 @@ export default function () {
 
         <Link href="/artwork/honse-backgrounds">
           <HubOsPreviewComponent />
+        </Link>
+
+        <Link href="/artwork/honse-battle-backgrounds">
+          <HubOsBattleBgPreviewComponent />
         </Link>
 
         <Link href="/artwork/honse-emotes-and-icons">

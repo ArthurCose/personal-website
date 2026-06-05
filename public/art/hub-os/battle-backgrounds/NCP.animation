@@ -1,0 +1,11 @@
+animation state="DEFAULT"
+#frame duration="180f" x="0" y="0" w="96" h="112"
+frame duration="60f" x="96" y="0" w="96" h="112"
+point label="VELOCITY" x="-0.3" y="-0.15"
+frame duration="30f" x="192" y="0" w="96" h="112"
+frame duration="20f" x="0" y="112" w="96" h="112"
+frame duration="20f" x="96" y="112" w="96" h="112"
+frame duration="20f" x="192" y="112" w="96" h="112"
+frame duration="180f" x="288" y="112" w="96" h="112"
+#
+frame duration="180f" x="0" y="0" w="96" h="112"
