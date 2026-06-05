@@ -11,10 +11,10 @@ export function PreviewComponent() {
 const pieceList = [
   { src: "/art/hub-os/animal-emotes.png" },
   { src: "/art/hub-os/fun-emotes.png" },
-  { src: "/art/hub-os/statuses.png" },
+  { src: "/art/hub-os/mod-categories.png" },
   { src: "/art/hub-os/inputs-a.png" },
   { src: "/art/hub-os/inputs-b.png" },
-  { src: "/art/hub-os/mod-categories.png" },
+  { src: "/art/hub-os/statuses.png" },
   { src: "/art/hub-os/badges.png" },
   { src: "/art/hub-os/mini-chips.png" },
   { src: "/art/hub-os/install.png" },
