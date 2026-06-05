@@ -12,25 +12,20 @@ const pieceList = [
   { src: "/art/blissful-cowboy/cactus1.png" },
   { src: "/art/blissful-cowboy/cactus2.png" },
   { src: "/art/blissful-cowboy/cactus3.png" },
-  { src: "/art/blissful-cowboy/scorpion.png", wide: true },
+  { src: "/art/blissful-cowboy/scorpion.png" },
 ];
 
 type PieceProps = {
   src: any;
-  wide?: boolean;
   onClick?: MouseEventHandler;
 };
 
-function Piece({ src, wide, onClick }: PieceProps) {
+function Piece({ src, onClick }: PieceProps) {
   return (
     <div className={styles.item_container}>
       <img
         onClick={onClick}
-        className={classNames(
-          styles.item,
-          wide ? styles.wide_item : styles.tall_item,
-          styles.language_dex_bg
-        )}
+        className={classNames(styles.item, styles.language_dex_bg)}
         src={src}
       />
     </div>

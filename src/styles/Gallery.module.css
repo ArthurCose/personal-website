@@ -34,6 +34,9 @@
 
 .item {
   image-rendering: pixelated;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 
 .gallery .item {
@@ -42,14 +45,6 @@
 
 .gallery .item:hover {
   outline: 1px solid white;
-}
-
-.wide_item {
-  width: 100%;
-}
-
-.tall_item {
-  height: 100%;
 }
 
 .fullscreen {

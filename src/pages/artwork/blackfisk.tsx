@@ -8,7 +8,7 @@ export function PreviewComponent() {
 }
 
 const pieceList = [
-  { src: "/art/blackfisk/Squid.png", wide: true },
+  { src: "/art/blackfisk/Squid.png" },
   { src: "/art/blackfisk/Cat.png" },
   { src: "/art/blackfisk/Dori.png" },
   { src: "/art/blackfisk/Ebola.png" },
@@ -16,27 +16,22 @@ const pieceList = [
   { src: "/art/blackfisk/Player.png" },
   { src: "/art/blackfisk/PlayerSmall.png" },
   { src: "/art/blackfisk/Fisk.png" },
-  { src: "/art/blackfisk/Background.png", wide: true },
-  { src: "/art/blackfisk/Explosion.png", wide: true },
+  { src: "/art/blackfisk/Background.png" },
+  { src: "/art/blackfisk/Explosion.png" },
   { src: "/art/blackfisk/icon.ico" },
 ];
 
 type PieceProps = {
   src: any;
-  wide?: boolean;
   onClick?: MouseEventHandler;
 };
 
-function Piece({ src, wide, onClick }: PieceProps) {
+function Piece({ src, onClick }: PieceProps) {
   return (
     <div className={styles.item_container}>
       <img
         onClick={onClick}
-        className={classNames(
-          styles.item,
-          wide ? styles.wide_item : styles.tall_item,
-          styles.language_dex_bg
-        )}
+        className={classNames(styles.item, styles.language_dex_bg)}
         src={src}
       />
     </div>

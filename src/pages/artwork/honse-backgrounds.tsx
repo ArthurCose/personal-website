@@ -10,7 +10,6 @@ import Plain from "@/lib/hub-os-backgrounds/themes/Plain";
 import Sunset from "@/lib/hub-os-backgrounds/themes/Sunset";
 import styles from "@/styles/Gallery.module.css";
 import Gallery from "@/components/gallery";
-import classNames from "classnames";
 import Link from "next/link";
 
 export function PreviewComponent() {
@@ -71,10 +70,13 @@ function Piece<T extends new () => Theme>({
       theme.prepare(canvas, ctx);
     }
 
-    const interval = setInterval(() => {
-      theme.draw(canvas, ctx, frameNumber);
-      frameNumber += 1;
-    }, theme.FRAME_DURATION * (1000 / 60));
+    const interval = setInterval(
+      () => {
+        theme.draw(canvas, ctx, frameNumber);
+        frameNumber += 1;
+      },
+      theme.FRAME_DURATION * (1000 / 60),
+    );
 
     return () => {
       clearInterval(interval);
@@ -85,7 +87,7 @@ function Piece<T extends new () => Theme>({
   return (
     <canvas
       onClick={onClick}
-      className={classNames(styles.item, styles.wide_item)}
+      className={styles.item}
       onMouseOver={() => setAnimating(animateAlways || true)}
       onMouseOut={() => setAnimating(animateAlways || false)}
       ref={ref}

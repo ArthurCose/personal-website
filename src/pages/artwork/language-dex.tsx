@@ -41,11 +41,7 @@ function Piece({ src, onClick }: PieceProps) {
     <div className={styles.item_container}>
       <img
         onClick={onClick}
-        className={classNames(
-          styles.item,
-          styles.wide_item,
-          styles.language_dex_bg
-        )}
+        className={classNames(styles.item, styles.language_dex_bg)}
         src={src}
       />
     </div>
