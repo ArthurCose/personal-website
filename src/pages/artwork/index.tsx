@@ -3,6 +3,7 @@ import { PreviewComponent as LanguageDexPreviewComponent } from "./language-dex"
 import { PreviewComponent as HubOsPreviewComponent } from "./honse-backgrounds";
 import { PreviewComponent as HubOsBattleBgPreviewComponent } from "./honse-battle-backgrounds";
 import { PreviewComponent as HubOsEmojiPreviewComponent } from "./honse-emoji-and-icons";
+import { PreviewComponent as HubOsCustomContentPreviewComponent } from "./honse-custom-content";
 import { PreviewComponent as BlissfulCowboyPreviewComponent } from "./blissful-cowboy";
 import { PreviewComponent as ToweringRacePreviewComponent } from "./towering-race";
 import { PreviewComponent as BlackFiskPreviewComponent } from "./blackfisk";
@@ -31,6 +32,10 @@ export default function () {
 
         <Link href="/artwork/honse-emoji-and-icons">
           <HubOsEmojiPreviewComponent />
+        </Link>
+
+        <Link href="/artwork/honse-custom-content">
+          <HubOsCustomContentPreviewComponent />
         </Link>
 
         <Link href="/artwork/blissful-cowboy">
