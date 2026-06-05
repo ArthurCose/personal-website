@@ -48,7 +48,7 @@ function useNavigationGuard(enabled: boolean, callback: () => void) {
       return false;
     });
 
-    () => {
+    return () => {
       router.beforePopState(() => true);
     };
   }, [enabled, callback]);
