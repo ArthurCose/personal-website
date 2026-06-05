@@ -82,7 +82,6 @@ function Piece({ animateAlways, srcBase, onClick }: PieceProps) {
     const canvas = ref.current!;
     const ctx = canvas.getContext("2d")!;
 
-    console.log(canvas, ctx);
     render(canvas, ctx, 0);
   }, [render]);
 
