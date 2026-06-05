@@ -2,6 +2,7 @@ import { MouseEventHandler } from "react";
 import styles from "@/styles/Gallery.module.css";
 import Gallery from "@/components/gallery";
 import classNames from "classnames";
+import Link from "next/link";
 
 export function PreviewComponent() {
   return <Piece src={"/art/language-dex/icon.svg"} />;
@@ -52,10 +53,14 @@ export default function () {
   return (
     <>
       <p>
-        Final art and drafts for Language Dex. After finding the app was too
-        bland and empty, I decided to learn how to create SVGs in Krita to
-        create this mascot. She is the "Language Cat", which can also be an
-        alternative name for the app when treated as a pun on Cat-alog.
+        Final art and drafts for{" "}
+        <Link href="https://github.com/arthurcose/language-dex">
+          Language Dex
+        </Link>
+        . After finding the app was too bland and empty, I decided to learn how
+        to create SVGs in Krita to create this mascot. She is the "Language
+        Cat", which can also be an alternative name for the app when treated as
+        a pun on Cat-alog.
       </p>
 
       <br />
