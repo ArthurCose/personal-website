@@ -23,6 +23,7 @@ const pieceList = [
   { srcBase: "/art/hub-os/battle-backgrounds/MATH_SNOW" },
   { srcBase: "/art/hub-os/battle-backgrounds/MS_PAINT_FOLDERS" },
   { srcBase: "/art/hub-os/battle-backgrounds/PLAIN_GRID" },
+  { srcBase: "/art/hub-os/battle-backgrounds/INDEX" },
   { srcBase: "/art/hub-os/battle-backgrounds/CODES" },
 ];
 
@@ -133,7 +134,7 @@ export default function () {
       <p>
         Motion is removed in a few of these renders to reduce motion sickness,
         as these animations aren't meant to be viewed without something to
-        ground your eyes on.
+        ground your eyes with.
       </p>
 
       <br />
