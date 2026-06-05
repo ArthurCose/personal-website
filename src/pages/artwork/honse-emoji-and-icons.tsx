@@ -41,7 +41,7 @@ export default function () {
   return (
     <>
       <p>
-        Emoticons and icons for{" "}
+        Emoji and icons for{" "}
         <Link href="https://hub-os.itch.io/hub-os">Hub OS</Link>
       </p>
 
